@@ -12,6 +12,7 @@
   "plugins": [
     {
       "name": "camm-bac",
+      "source": "camm-bac",
       "description": "Plugin camm-bac team",
       "version": "0.0.1"
     }
