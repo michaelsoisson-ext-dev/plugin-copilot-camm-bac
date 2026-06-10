@@ -1,0 +1,19 @@
+{
+  "name": "orange-camm-bac",
+  "owner": {
+    "name": "Orange-camm-bac",
+    "email": "michael.soisson.ext@orange.com"
+  },
+  "metadata": {
+    "description": " collection of GitHub Copilot plugins, agents, prompts, and skills for our teams",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "camm-bac",
+      "description": "Plugin camm-bac team",
+      "version": "0.0.1"
+    }
+  ]
+}

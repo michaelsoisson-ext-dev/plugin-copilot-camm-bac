@@ -4,12 +4,15 @@
   "version": "0.0.1",
   "author": {
     "name": "Michael soisson",
-    "email": "jane@example.com"
+    "email": "michael.soisson.ext@orange.com"
   },
   "license": "Orange",
   "keywords": ["backend", "nodejs"],
   "agents": "agents/",
-  "skills": ["skills/", "extra-skills/"],
-  "hooks": "hooks.json",
-  "mcpServers": ".mcp.json"
+  "skills": [
+    "./skills/conventions-camm-bac",
+    "./skills/docker-camm-bac",
+    "./skills/javascript-camm-bac",
+    "./skills/test-camm-bac"
+  ]
 }
