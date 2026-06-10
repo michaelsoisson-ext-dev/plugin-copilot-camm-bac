@@ -4,13 +4,22 @@ Plugin Copilot pour l'intégralité de Camm Bac
 
 Les plugins sont des packages installables qui étendent l'interface de ligne de commande GitHub Copilot avec des agents, des compétences, des hooks et des intégrations réutilisables.
 
-# Qui peut utiliser cette fonctionnalité ?
+# Installation
 
-L'interface de ligne de commande GitHub Copilot est disponible avec tous les abonnements Copilot. Si vous recevez Copilot d'une organisation, la stratégie d'utilisation de l'interface de ligne de commande Copilot doit être activée dans les paramètres de cette organisation.
+dans un terminal copilot :
 
-Dans cet article :
+- ajout de la marketplace
+  `/plugin marketplace add  michaelsoisson-ext-dev/plugin-copilot-camm-bac `
 
-Les plugins permettent de distribuer des fonctionnalités personnalisées pour l'interface de ligne de commande. Vous pouvez utiliser un plugin pour ajouter un ensemble de fonctionnalités préconfigurées à l'interface de ligne de commande Copilot.
+- voir les plugins disponibles
+  `/plugin marketplace browse orange-camm-bac`
+
+- Install du plugin concerné
+  `/plugin install camm-bac@orange-camm-bac`
+
+- commande `/skills` pour lister les compétences installées.
+
+- commande `/agent` pour choisir le nouvel agent 'ai-backend-js-dev.
 
 # Qu'est-ce qu'un plugin ?
 
