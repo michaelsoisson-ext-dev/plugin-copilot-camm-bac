@@ -1,17 +1,17 @@
 ---
-name: security-camm-bac
+name: review
 description: Review code changes for quality, security, and adherence to project standards
 ---
 
-## When to Use This Skill
+# Code Review
 
 Review code changes for quality, security, and adherence to project standards.
 
-## Ask for:
+Ask for:
 
-1. **What to check** (paste code diff or describe changes)
+1. **What to review** (paste code diff or describe changes)
 2. **Focus areas** (functionality, security, performance, testing, etc.)
-3. **Vulnerabilities** (what issue does this solve?)
+3. **Context** (what problem does this solve?)
 
 ## Review Checklist
 
@@ -29,8 +29,9 @@ Review code changes for quality, security, and adherence to project standards.
 ## Requirements
 
 - Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
+- Reference code review guidelines from `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/code-review-camm-bac.instructions.md` and `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/conventions-camm-bac.instructions.md`
+
 - Apply the repository's code standards
-- Reference code review guidelines from files `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/security*.instructions.md`
 
 - Provide constructive, specific feedback
 - Categorize issues as critical, important, or nice-to-have

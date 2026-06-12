@@ -1,5 +1,5 @@
 ---
-name: code-camm-bac
+name: code
 description: Write code or refactor code to improve readability, performance, and maintainability
 ---
 

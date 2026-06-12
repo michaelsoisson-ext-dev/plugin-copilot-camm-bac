@@ -1,5 +1,5 @@
 ---
-name: test-camm-bac
+name: test
 description: Generate comprehensive unit tests for the selected code, covering happy path, edge cases, and error conditions
 ---
 

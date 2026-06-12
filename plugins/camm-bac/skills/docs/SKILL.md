@@ -1,5 +1,5 @@
 ---
-name: docs-camm-bac
+name: docs
 description: Generate and update project documentation
 ---
 

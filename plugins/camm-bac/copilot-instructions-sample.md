@@ -81,26 +81,41 @@ A robust Node.js backend API built with Fastify for the Copilot BAC project, fea
   - `fix(queue): handle job failure retry logic`
   - `test(users): add validation tests`
 
+### Commit Messages
+
+Follows Conventional Commits: `feat:`, `fix:`, `chore:`, `refactor:`, `test:`, `docs:`, etc.  
+Use GitHub closing keywords in commits when resolving issues: `fix: description (Fixes #42)`
+
+## Agents
+
+custom agents live in `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/`:
+
+| Agent                  | When to use                                                    |
+| ---------------------- | -------------------------------------------------------------- |
+| `backend-dev-camm-bac` | Building features, APIs, fixing bugs                           |
+| `debugger-camm-bac`    | Systematic bug investigation and resolution                    |
+| `reviewer-camm-bac`    | Code quality, security hardening, refactoring with green tests |
+
 ### Code Review Standards
 
-- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/code-review.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/code-review-camm-bac.instructions.md`
 
 ## Language-Specific Guidelines
 
-- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript-camm-bac.instructions.md`
 
 ## Testing Standards
 
-- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/testing.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/testing-camm-bac.instructions.md`
 
 ## Security Best Practices
 
-- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/security.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/security-camm-bac.instructions.md`
 
 ## Documentation Requirements
 
-- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/documentation.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/documentation-camm-bac.instructions.md`
 
 ## Performance Optimization
 
-- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/performance.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/performance-camm-bac.instructions.md`

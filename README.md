@@ -53,7 +53,7 @@ Le plugin a été crée avec l'aide de l'instruction copilot starter ( awesome c
 
 Ouvrez un fichier et demandez :
 
-`/code-camm-bac Create a user management component`
+`/camm-bac:code Create a user management component`
 
 3. Utilisez un agent :
 

@@ -1,5 +1,5 @@
 ---
-name: docker-camm-bac
+name: docker
 description: Guidelines for writing efficient and secure Dockerfiles
 globs: "**/Dockerfile*"
 alwaysApply: false

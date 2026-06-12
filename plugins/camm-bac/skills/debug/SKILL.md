@@ -1,5 +1,5 @@
 ---
-name: debug-camm-bac
+name: debug
 description: Debug production and development issues in the API
 ---
 
