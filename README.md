@@ -32,6 +32,7 @@ Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learni
   `/plugin update camm-bac@orange-camm-bac`
 
 - commande `/skills` pour lister les compétences installées.
+- commande `/skills reload ` apres un update du plugin dans la session
 
 - commande `/agent` pour choisir le nouvel agent 'ai-backend-js-dev.
 
