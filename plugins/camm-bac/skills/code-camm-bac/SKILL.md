@@ -3,11 +3,11 @@ name: code-camm-bac
 description: Write code or refactor code to improve readability, performance, and maintainability
 ---
 
-## When to Use This Skill
+## When to use this Skill
 
 Write new code or refactor existing code to improve readability, maintainability, performance, or security.
 
-## Ask for:
+## Ask for
 
 1. **What to code** (paste code or describe the file/section)
 2. **What to refactor** (paste code or describe the file/section)
@@ -24,7 +24,8 @@ Write new code or refactor existing code to improve readability, maintainability
 
 ## Requirements
 
-- Follow project's documentation standards from `.github/instructions/javascript-camm-bac.instructions` and `.github/instructions/conventions-camm-bac.instructions`
+- Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
+- Follow project's documentation standards from ` ~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript-camm-bac.instructions` and ` ~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/conventions-camm-bac.instructions`
 - Maintain backward compatibility unless explicitly allowed
 - Include tests for refactored code
 - Update documentation if behavior changes

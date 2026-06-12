@@ -83,24 +83,24 @@ A robust Node.js backend API built with Fastify for the Copilot BAC project, fea
 
 ### Code Review Standards
 
-- See `.github/instructions/code-review.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/code-review.instructions.md`
 
 ## Language-Specific Guidelines
 
-- See `.github/instructions/javascript.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript.instructions.md`
 
 ## Testing Standards
 
-- See `.github/instructions/testing.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/testing.instructions.md`
 
 ## Security Best Practices
 
-- See `.github/instructions/security.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/security.instructions.md`
 
 ## Documentation Requirements
 
-- See `.github/instructions/documentation.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/documentation.instructions.md`
 
 ## Performance Optimization
 
-- See `.github/instructions/performance.instructions.md`
+- See `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/performance.instructions.md`

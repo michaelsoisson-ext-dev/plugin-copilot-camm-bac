@@ -19,8 +19,10 @@ description: Generate comprehensive unit tests for the selected code, covering h
 
 ## Requirements
 
+- Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
+
 - Use the project's established testing patterns
-- Follow project's documentation standards from `.github/instructions/testing-camm-bac.instructions`
+- Follow project's documentation standards from `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/testing-camm-bac.instructions`
 - Include code examples where appropriate
 - Use Jest framework
 - Test both success and error scenarios

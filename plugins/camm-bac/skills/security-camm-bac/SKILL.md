@@ -28,8 +28,9 @@ Review code changes for quality, security, and adherence to project standards.
 
 ## Requirements
 
+- Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
 - Apply the repository's code standards
-- Reference code review guidelines from files `.github/instructions/security*.instructions.md`
+- Reference code review guidelines from files `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/security*.instructions.md`
 
 - Provide constructive, specific feedback
 - Categorize issues as critical, important, or nice-to-have

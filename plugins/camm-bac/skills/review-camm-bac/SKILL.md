@@ -28,8 +28,10 @@ Ask for:
 
 ## Requirements
 
+- Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
+- Reference code review guidelines from `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/code-review-camm-bac.instructions.md` and `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/conventions-camm-bac.instructions.md`
+
 - Apply the repository's code standards
-- Reference code review guidelines from `.github/instructions/code-review-camm-bac.instructions.md` and `.github/instructions/conventions-camm-bac.instructions.md`
 
 - Provide constructive, specific feedback
 - Categorize issues as critical, important, or nice-to-have

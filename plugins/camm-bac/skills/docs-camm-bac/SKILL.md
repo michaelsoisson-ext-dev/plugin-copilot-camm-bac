@@ -25,7 +25,8 @@ Generate and update project documentation including API docs, setup guides, and 
 
 ## Requirements
 
-- Follow project's documentation standards from `.github/instructions/documentation-camm-bac.instructions`
+- Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
+- Follow project's documentation standards from `.~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/documentation-camm-bac.instructions`
 - Include code examples where appropriate
 - Format using Markdown with clear structure
 - Keep documentation synchronized with code

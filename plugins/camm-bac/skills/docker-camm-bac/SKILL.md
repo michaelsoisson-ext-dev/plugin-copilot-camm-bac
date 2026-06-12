@@ -5,7 +5,7 @@ globs: "**/Dockerfile*"
 alwaysApply: false
 ---
 
-## When to Use This Skill
+## When to use this Skill
 
 - Use Docker for containerization , multiple stage build and cloud-native development.
 

@@ -3,11 +3,11 @@ name: debug-camm-bac
 description: Debug production and development issues in the API
 ---
 
-# Debug Issue
+## When to use this Skill
 
 Help debug issues in the API, job queue, or database layer.
 
-Ask for:
+## Ask for
 
 1. **Issue description** (what's happening, what's expected?)
 2. **Error messages** (logs, stack traces, error output)
@@ -37,7 +37,8 @@ Ask for:
 
 ## Requirements
 
-- Follow project's documentation standards from `.github/instructions/javascript-camm-bac.instructions` and `.github/instructions/conventions-camm-bac.instructions`
+- Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
+- Follow project's documentation standards from `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript-camm-bac.instructions` and `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions//conventions-camm-bac.instructions`
 - Provide minimal reproducible example
 - Include comprehensive logs
 - Suggest both immediate fix and long-term solution

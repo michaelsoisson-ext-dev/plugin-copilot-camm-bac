@@ -6,12 +6,20 @@ Les plugins sont des packages installables qui étendent l'interface de ligne de
 
 Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learning-hub/cli-for-beginners/)
 
+# Prerequis
+
+- 1. dans un terminal copilot :
+     avant de commencer les étapes activer les permissions avec `/yolo`
+     pour eviter les arrets prompts.- ( best practices github !))
+- 2. Pour que l'experience du plugin fonctionne bien , il faut au prealable
+     creer un fichier `.github/instructions/copilot-instructions` qui va centraliser le context de l'application .
+
+- 3. On peut le creer via le fichier `/init`. Copilot va parcourir la code base si existante puis creer le context.
+
 # Installation
 
-dans un terminal copilot :
-
 - ajout de la marketplace
-  `/plugin marketplace add  michaelsoisson-ext-dev/plugin-copilot-camm-bac `
+  `/plugin marketplace add  michaelsoisson-ext-dev/plugin-copilot-camm-bac`
 
 - voir les plugins disponibles
   `/plugin marketplace browse orange-camm-bac`
@@ -19,9 +27,21 @@ dans un terminal copilot :
 - Install du plugin concerné
   `/plugin install camm-bac@orange-camm-bac`
 
+- Update du plugin concerné
+
+  `/plugin update camm-bac@orange-camm-bac`
+
 - commande `/skills` pour lister les compétences installées.
 
 - commande `/agent` pour choisir le nouvel agent 'ai-backend-js-dev.
+
+## Path d'installation
+
+Les skill \*-camm-bac sont installés via Copilot (pas via .agents) :
+
+`/home/michael/.copilot/installed-plugins/orange-camm-bac/camm-bac/skills/code-camm-bac/SKILL.md`
+
+Ce plugin orange-camm-bac est chargé différemment des skills installé dans .agents/skills/ c'est pourquoi il apparait avec le type plugin dans la liste des skills disponibles.
 
 ## 🚀 Usage
 
@@ -33,7 +53,7 @@ Le plugin a été crée avec l'aide de l'instruction copilot starter ( awesome c
 
 Ouvrez un fichier et demandez :
 
-`@code-camm-bac Create a user management component`
+`/code-camm-bac Create a user management component`
 
 3. Utilisez un agent :
 
