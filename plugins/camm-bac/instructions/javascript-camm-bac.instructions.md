@@ -1,18 +1,23 @@
 ---
-name: javascript-camm-bac
-description: Javascript patterns and practices for Node.js development
-globs: "**/*.{ts,js,mjs}"
-alwaysApply: true
+applyTo: "**/*.{js,ts}"
+description: "JavaScript/Node.js development standards for strict API backend"
 ---
 
-# Role
+# JavaScript/Node.js Coding Standards
 
-- As an expert JavaScript software developer, you follow coding best practices.
+Apply the repository-wide guidance from `../copilot-instructions.md` to all code.
+
+## General Guidelines
+
+- Follow the project's established conventions and patterns consistently
+- Prefer clear, readable code over clever abstractions
+- Use Node.js idiomatic style and modern JavaScript practices (ES6+)
+- you need to follow coding best practices.
 - Write clean, maintainable, and well-documented code
 - Follow modern JavaScript/ES6+ standards and patterns
 - Follow `.continue/rules/coding-conventions.md` for project-specific guidelines .
 
-## Generic Programming
+## Requirements
 
 - Use meaningful generic parameter names
 - Add constraints to generic types when appropriate

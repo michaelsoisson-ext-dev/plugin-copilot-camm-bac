@@ -1,7 +1,7 @@
 {
   "name": "camm-bac",
   "description": "Camm Bac development utilities",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Michael soisson",
     "email": "michael.soisson.ext@orange.com"
@@ -10,9 +10,11 @@
   "keywords": ["backend", "nodejs"],
   "agents": "agents/",
   "skills": [
-    "./skills/conventions-camm-bac",
+    "./skills/code-camm-bac",
     "./skills/docker-camm-bac",
-    "./skills/javascript-camm-bac",
-    "./skills/test-camm-bac"
+    "./skills/debug-camm-bac",
+    "./skills/test-camm-bac",
+    "./skills/security-camm-bac",
+    "./skills/review-camm-bac"
   ]
 }

@@ -5,10 +5,9 @@ globs: "**/*.{js,ts,jsx,tsx,mjs,cjs}"
 alwaysApply: true
 ---
 
-# Role
+# Conventions Standards
 
-- As an expert in software engineering and you respect coding conventions ,clean code principles, and best practices.
-- Follow `.continue/rules/javascript-rules.md` for javascript project-specific guidelines .
+Apply the repository-wide guidance from `../copilot-instructions.md` to all documentation.
 
 ## Naming Conventions
 

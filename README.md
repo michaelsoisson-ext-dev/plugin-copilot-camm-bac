@@ -1,8 +1,10 @@
 # Plugin-copilot-camm-bac
 
-Plugin Copilot pour l'intégralité de Camm Bac
+Plugin-copilot-camm-bac est un helper de configuration AI copilot pour l'equipe de Camm Bac
 
 Les plugins sont des packages installables qui étendent l'interface de ligne de commande GitHub Copilot avec des agents, des compétences, des hooks et des intégrations réutilisables.
+
+Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learning-hub/cli-for-beginners/)
 
 # Installation
 
@@ -21,6 +23,28 @@ dans un terminal copilot :
 
 - commande `/agent` pour choisir le nouvel agent 'ai-backend-js-dev.
 
+## 🚀 Usage
+
+Le plugin a été crée avec l'aide de l'instruction copilot starter ( awesome copilot )
+
+2. Testez un skill :
+
+| Dans VS Code ou votre éditeur compatible Copilot
+
+Ouvrez un fichier et demandez :
+
+`@code-camm-bac Create a user management component`
+
+3. Utilisez un agent :
+
+Demandez un agent spécialisé
+
+```
+@backend-dev-camm-bac Build a new authentication endpoint
+@reviewer-camm-bac Review this pull request code
+@debugger-dev-camm-bac Debug this timeout error
+```
+
 # Qu'est-ce qu'un plugin ?
 
 Un package distribuable qui étend les fonctionnalités de l'interface de ligne de commande Copilot.
@@ -31,15 +55,15 @@ Un plugin peut contenir tout ou partie des composants suivants :
 
 ## Agents personnalisés
 
-Assistants IA spécialisés (fichiers \*.agent.md dans agents/)
+Persona ou [assistants IA spécialisés](https://awesome-copilot.github.com/learning-hub/agents-and-subagents/) (fichiers \*.agent.md dans agents/)
 
 ## Skills
 
-Fonctionnalités discrètes (sous-répertoires skills dans skills/, contenant un fichier SKILL.md)
+[Tâche dédiée](https://awesome-copilot.github.com/learning-hub/creating-effective-skills/) ou Fonctionnalités discrètes (sous-répertoires skills dans skills/, contenant un fichier SKILL.md)
 
 ## Hooks
 
-Gestionnaires d’événements qui interceptent le comportement des agents (un fichier hooks.json à la racine du plugin ou dans hooks/)
+[Gestionnaires d’événements](https://awesome-copilot.github.com/learning-hub/automating-with-hooks/) qui interceptent le comportement des agents (un fichier hooks.json à la racine du plugin ou dans hooks/)
 
 ## Configurations du serveur MCP
 
@@ -56,13 +80,14 @@ Standardisation de la configuration de l'interface de ligne de commande (CLI) au
 Partage d'expertise (par exemple, en mettant à disposition les compétences d'un expert Rails ou Kubernetes)
 Encapsulation des configurations complexes de serveurs MCP
 
-# Où trouver des plugins ?
+📚 Où trouver des plugins ?
 
 Vous pouvez installer des plugins depuis :
 
-Une place de marché
-Un dépôt
-Un répertoire local
+- [awsome copilot](https://awesome-copilot.github.com/)
+- [awsome copilot plugins](https://awesome-copilot.github.com/plugins/)
+- [Hub apprentissage](https://awesome-copilot.github.com/learning-hub/)
+
 Une place de marché est un espace où les développeurs peuvent publier, découvrir, installer et gérer des plugins. C'est un peu comme une boutique d'applications, mais pour les plugins.
 
 ## Exemples de places de marché :
@@ -75,16 +100,17 @@ Pour en savoir plus sur l'ajout de places de marché et l'installation de plugin
 
 Les administrateurs d'entreprise peuvent définir des normes de plugins applicables aux utilisateurs du plan Copilot de l'entreprise, notamment en spécifiant des places de marché et des plugins supplémentaires installés automatiquement pour les utilisateurs de l'interface de ligne de commande Copilot (CLI). Voir À propos des normes de plugins gérées par l'entreprise.
 
-# Comparaison des plugins et de la configuration manuelle
+### Comparaison des plugins et de la configuration manuelle
 
 Toute fonctionnalité pouvant être ajoutée via un plugin peut également l'être en configurant manuellement la CLI Copilot, par exemple en ajoutant des profils d'agent personnalisés ou des serveurs MCP. Cependant, les plugins offrent plusieurs avantages par rapport à la configuration manuelle :
 
 Fonctionnalité : Configuration manuelle dans un dépôt / Plugin
 
-# Portée : Dépôt unique / Tout projet
+---
 
-# Partage : Copier/coller manuel de la commande `/plugin install`
+### Prochaines étapes
 
-# Gestion des versions : Historique Git / Versions des places de marché
-
-# Découverte : Recherche dans les dépôts / Navigation dans les places de marché
+1.  Setup Copilot dans VS Code : Installer l'extension GitHub Copilot
+2.  Explorer les instructions : Lire .github/copilot-instructions.md
+3.  Personnaliser : Adapter les instructions vos conventions
+4.  Ajouter au team : Partager avec vos collegues
