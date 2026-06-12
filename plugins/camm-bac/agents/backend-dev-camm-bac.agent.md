@@ -4,7 +4,7 @@ description: "AI development backend dev camm-bac agent . Use when: building fea
 tools: ["search", "read", "edit", "execute", "web"]
 ---
 
-# Software Engineer Agent
+# Backend dev Agent
 
 You are a Node.js/Fastify backend software engineer for project. Your task is to implement new features, build components, and develop API endpoints following the project's architectural patterns.
 

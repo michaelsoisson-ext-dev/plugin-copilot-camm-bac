@@ -6,15 +6,15 @@ Les plugins sont des packages installables qui étendent l'interface de ligne de
 
 Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learning-hub/cli-for-beginners/)
 
-# Prerequis
+# 💡Prerequis
 
-- 1. dans un terminal copilot :
-     avant de commencer les étapes activer les permissions avec `/yolo`
-     pour eviter les arrets prompts.- ( best practices github !))
-- 2. Pour que l'experience du plugin fonctionne bien , il faut au prealable
-     creer un fichier `.github/instructions/copilot-instructions` qui va centraliser le context de l'application .
-
-- 3. On peut le creer via le fichier `/init`. Copilot va parcourir la code base si existante puis creer le context.
+0. Utiliser `copilot cli` ( dans VSCode ou pas ) plutot que le chat copilot pour des raison de performances.
+1. dans un terminal copilot :
+   avant de commencer les étapes activer les permissions avec `/yolo`
+   pour eviter les arrets prompts.- ( best practices github !))
+2. Pour que l'experience du plugin fonctionne bien , il faut au prealable
+   creer un fichier `.github/instructions/copilot-instructions` qui va centraliser le context de l'application .
+3. On peut le creer via le fichier `/init`. Copilot va parcourir la code base si existante puis creer le context.
 
 # Installation
 
@@ -85,6 +85,17 @@ Persona ou [assistants IA spécialisés](https://awesome-copilot.github.com/lear
 ## Hooks
 
 [Gestionnaires d’événements](https://awesome-copilot.github.com/learning-hub/automating-with-hooks/) qui interceptent le comportement des agents (un fichier hooks.json à la racine du plugin ou dans hooks/)
+
+Essential Slash Commands
+These commands work in interactive mode. Start with just these six - they cover 90% of daily use:
+
+Command What It Does When to Use
+/help Show all available commands When you forget a command
+/clear Clear conversation and start fresh When switching topics
+/plan Plan your work out before coding For more complex features
+/research Deep research using GitHub and web sources When you need to investigate a topic before coding
+/model Show or switch AI model When you want to change the AI model
+/exit End the session When you’re done
 
 ## Configurations du serveur MCP
 

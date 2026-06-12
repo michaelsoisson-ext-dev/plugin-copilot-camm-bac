@@ -1,7 +1,7 @@
 ---
 name: "reviewer-camm-bac"
 description: "AI reviewer camm-bac agent. Use when:  Review code changes for quality, security, and adherence to project standards"
-tools: ["search", "read", "edit", "execute", "web"]
+tools: ["search", "read", "edit", "web"]
 ---
 
 ## Role Guidelines
