@@ -5,7 +5,7 @@ description: "Testing standards and practices for Node.js backend"
 
 # Testing Standards
 
-Apply the repository-wide guidance from `../copilot-instructions.md` to all tests.
+Apply the repository-wide guidance from `./github/copilot-instructions.md` to all tests.
 
 ## Testing Strategy
 

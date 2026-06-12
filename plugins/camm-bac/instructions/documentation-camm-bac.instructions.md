@@ -5,11 +5,12 @@ description: "Documentation standards and requirements"
 
 # Documentation Standards
 
-Apply the repository-wide guidance from `../copilot-instructions.md` to all documentation.
+Apply the repository-wide guidance from `./github/copilot-instructions.md` to all documentation.
 
 ## Documentation Requirements
 
 ### Code Documentation
+
 - Use JSDoc format for all functions and classes
 - Document function parameters, return types, and throw errors
 - Include examples for complex functions
@@ -18,6 +19,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 - Document external API integrations
 
 ### README.md
+
 - Project title and brief description
 - Quick start guide with setup instructions
 - Technology stack overview
@@ -29,6 +31,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 - License information
 
 ### API Documentation
+
 - Document all API endpoints with:
   - HTTP method and path
   - Request parameters (query, body, headers)
@@ -40,6 +43,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 - Keep documentation synchronized with code
 
 ### Job Queue Documentation
+
 - Document all BullMQ jobs with:
   - Job name and purpose
   - Input data schema
@@ -50,6 +54,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 - Document queue architecture and worker configuration
 
 ### Database Documentation
+
 - Document database schema:
   - Table names and purposes
   - Column definitions and data types
@@ -61,6 +66,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 - Document migration procedures for schema changes
 
 ### Configuration Documentation
+
 - Document all environment variables in `.env.example`
 - Include variable purposes and acceptable values
 - Document default values if applicable
@@ -68,6 +74,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 - Document configuration for different environments (dev, staging, production)
 
 ### Security & Deployment
+
 - Document security requirements and setup
 - Document deployment procedures step-by-step
 - Document backup and recovery procedures
@@ -78,6 +85,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
 ## JSDoc Format Examples
 
 ### Function Documentation
+
 ```javascript
 /**
  * Creates a new user with the provided email and password.
@@ -87,10 +95,11 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all docu
  * @throws {ValidationError} If email or password is invalid
  * @throws {DuplicateEmailError} If email already exists
  */
-async function createUser(email, password) { }
+async function createUser(email, password) {}
 ```
 
 ### Class Documentation
+
 ```javascript
 /**
  * Service for managing user operations.
@@ -102,7 +111,7 @@ class UserService {
    * @param {number} userId - The user ID
    * @returns {Promise<User|null>} The user object or null if not found
    */
-  async findById(userId) { }
+  async findById(userId) {}
 }
 ```
 
@@ -127,12 +136,14 @@ class UserService {
 ## Comments vs. Documentation
 
 **Write comments for:**
+
 - Explaining "why" (not "what")
 - Complex algorithms or business logic
 - Non-obvious implementation choices
 - Known workarounds or limitations
 
 **Avoid comments for:**
+
 - Self-explanatory code
 - Repeating what the code does
 - Outdated or obvious information

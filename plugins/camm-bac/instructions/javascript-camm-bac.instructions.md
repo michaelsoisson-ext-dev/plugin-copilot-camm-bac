@@ -5,7 +5,7 @@ description: "JavaScript/Node.js development standards for strict API backend"
 
 # JavaScript/Node.js Coding Standards
 
-Apply the repository-wide guidance from `../copilot-instructions.md` to all code.
+Apply the repository-wide guidance from `./github/copilot-instructions.md` to all code.
 
 ## General Guidelines
 
@@ -15,7 +15,7 @@ Apply the repository-wide guidance from `../copilot-instructions.md` to all code
 - you need to follow coding best practices.
 - Write clean, maintainable, and well-documented code
 - Follow modern JavaScript/ES6+ standards and patterns
-- Follow `.continue/rules/coding-conventions.md` for project-specific guidelines .
+- Follow `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/coding-conventions.md` for project-specific guidelines .
 
 ## Requirements
 

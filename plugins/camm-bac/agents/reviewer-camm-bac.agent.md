@@ -71,7 +71,7 @@ Priorities (in order):
 
 ## Review Standards
 
-- Reference `.github/instructions/code-review-camm-bac.instructions.md` for detailed guidelines
+- Reference `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/code-review-camm-bac.instructions.md` for detailed guidelines
 - Be constructive and specific in feedback
 - Categorize issues: Critical, Important, Nice-to-have
 - Provide code examples for suggested improvements

@@ -1,6 +1,7 @@
 ---
 name: Security - Configuration and Dependencies Check
 description: Detects insecure configuration practices and vulnerable dependencies.
+applyTo: "**/*.{js,ts,jsx,tsx,mjs,cjs},package.json,.env*"
 ---
 
 # Security - Configuration and Dependencies Check
@@ -25,41 +26,41 @@ These vulnerabilities could expose the application to various attacks or comprom
 
 ```javascript
 // Development mode in production
-app.set('env', 'development')
+app.set("env", "development");
 
 // Insecure CORS configuration
 app.use(
-    cors({
-        origin: '*', // Allow all origins
-    })
-)
+  cors({
+    origin: "*", // Allow all origins
+  }),
+);
 
 // No rate limiting
-app.use(express.json())
+app.use(express.json());
 ```
 
 **Good Pattern:**
 
 ```javascript
 // Proper environment configuration
-const env = process.env.NODE_ENV || 'production'
-app.set('env', env)
+const env = process.env.NODE_ENV || "production";
+app.set("env", env);
 
 // Secure CORS configuration
 app.use(
-    cors({
-        origin: process.env.ALLOWED_ORIGINS?.split(',') || [],
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
-    })
-)
+  cors({
+    origin: process.env.ALLOWED_ORIGINS?.split(",") || [],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
 
 // Add rate limiting
 const rateLimit = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-})
-app.use(rateLimit)
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+});
+app.use(rateLimit);
 ```
 
 **Key Files to Check:**
@@ -74,28 +75,28 @@ app.use(rateLimit)
 
 ```javascript
 // No security headers
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 ```
 
 **Good Pattern:**
 
 ```javascript
 // Proper security headers
-app.use(helmet())
+app.use(helmet());
 app.use(
-    helmet.contentSecurityPolicy({
-        directives: {
-            defaultSrc: ["'self'"],
-            scriptSrc: ["'self'", "'unsafe-inline'"],
-            styleSrc: ["'self'", "'unsafe-inline'"],
-            imgSrc: ["'self'", 'data:'],
-            fontSrc: ["'self'"],
-            objectSrc: ["'none'"],
-            upgradeInsecureRequests: [],
-        },
-    })
-)
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", "data:"],
+      fontSrc: ["'self'"],
+      objectSrc: ["'none'"],
+      upgradeInsecureRequests: [],
+    },
+  }),
+);
 ```
 
 **Key Files to Check:**
@@ -138,39 +139,39 @@ app.use(
 
 ```javascript
 // Using deprecated APIs
-const crypto = require('crypto')
-const hash = crypto.createHash('md5').update(data).digest('hex')
+const crypto = require("crypto");
+const hash = crypto.createHash("md5").update(data).digest("hex");
 
 // Insecure session configuration
 app.use(
-    session({
-        secret: 'keyboard cat',
-        resave: false,
-        saveUninitialized: true,
-    })
-)
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: true,
+  }),
+);
 ```
 
 **Good Pattern:**
 
 ```javascript
 // Using secure alternatives
-const { createHash } = require('crypto')
-const hash = createHash('sha256').update(data).digest('hex')
+const { createHash } = require("crypto");
+const hash = createHash("sha256").update(data).digest("hex");
 
 // Secure session configuration
 app.use(
-    session({
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            secure: process.env.NODE_ENV === 'production',
-            httpOnly: true,
-            sameSite: 'strict',
-        },
-    })
-)
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      httpOnly: true,
+      sameSite: "strict",
+    },
+  }),
+);
 ```
 
 **Key Files to Check:**
@@ -185,21 +186,21 @@ app.use(
 
 ```javascript
 // No CSRF protection
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 ```
 
 **Good Pattern:**
 
 ```javascript
 // Complete security middleware stack
-app.use(express.json({ limit: '10kb' }))
-app.use(express.urlencoded({ extended: true, limit: '10kb' }))
-app.use(helmet())
-app.use(cors(corsOptions))
-app.use(rateLimit)
-app.use(csrf())
-app.use(xss())
+app.use(express.json({ limit: "10kb" }));
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(helmet());
+app.use(cors(corsOptions));
+app.use(rateLimit);
+app.use(csrf());
+app.use(xss());
 ```
 
 **Key Files to Check:**
@@ -214,9 +215,9 @@ app.use(xss())
 
 ```javascript
 // No file type validation
-app.post('/upload', upload.any(), (req, res) => {
-    // process files
-})
+app.post("/upload", upload.any(), (req, res) => {
+  // process files
+});
 ```
 
 **Good Pattern:**
@@ -224,16 +225,16 @@ app.post('/upload', upload.any(), (req, res) => {
 ```javascript
 // Secure file upload
 const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-        cb(null, true)
-    } else {
-        cb(new Error('Invalid file type'), false)
-    }
-}
+  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+    cb(null, true);
+  } else {
+    cb(new Error("Invalid file type"), false);
+  }
+};
 
-app.post('/upload', upload.fields([{ name: 'avatar', maxCount: 1, fileFilter }]), (req, res) => {
-    // process files
-})
+app.post("/upload", upload.fields([{ name: "avatar", maxCount: 1, fileFilter }]), (req, res) => {
+  // process files
+});
 ```
 
 **Key Files to Check:**

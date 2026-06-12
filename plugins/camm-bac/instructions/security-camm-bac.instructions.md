@@ -1,6 +1,6 @@
 ---
-applyTo: "**/*.js,**/*.ts,package.json,.env*"
 description: "Security best practices and guidelines"
+applyTo: "**/*.{js,ts,jsx,tsx,mjs,cjs},package.json,.env*"
 ---
 
 # Security Best Practices

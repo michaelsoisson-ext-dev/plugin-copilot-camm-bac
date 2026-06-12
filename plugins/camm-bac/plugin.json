@@ -1,7 +1,7 @@
 {
   "name": "camm-bac",
   "description": "Camm Bac development utilities",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "author": {
     "name": "Michael soisson",
     "email": "michael.soisson.ext@orange.com"
@@ -15,6 +15,7 @@
     "./skills/debug",
     "./skills/test",
     "./skills/security",
-    "./skills/review"
+    "./skills/review",
+    "./skills/docs"
   ]
 }

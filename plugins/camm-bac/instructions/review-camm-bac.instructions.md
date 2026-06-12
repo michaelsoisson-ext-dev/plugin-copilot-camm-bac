@@ -5,7 +5,7 @@ description: "Code review standards and GitHub review guidelines"
 
 # Code Review Standards
 
-Apply the repository-wide guidance from `../copilot-instructions.md` to all code reviews.
+Apply the repository-wide guidance from `./github/copilot-instructions.md` to all code reviews.
 
 ## Code Review Process
 

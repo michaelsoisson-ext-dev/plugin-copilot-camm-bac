@@ -5,7 +5,7 @@ description: "Performance optimization guidelines and best practices"
 
 # Performance Optimization Guidelines
 
-Apply the repository-wide guidance from `../copilot-instructions.md` to all code.
+Apply the repository-wide guidance from `./github/copilot-instructions.md` to all code.
 
 ## Database Performance
 

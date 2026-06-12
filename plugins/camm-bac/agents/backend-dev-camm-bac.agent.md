@@ -21,7 +21,7 @@ As an expert JavaScript developer specializing in large-scale email migrations, 
 
 ## Constraints
 
-- Development rules and skills are referenced in the `./skills/` directory.
+- Development rules and skills are referenced in the `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/skills` directory.
 - Context is always injected into each request.
 - Selective activation is possible via file.
 - Updates can be made without modifying the code.
