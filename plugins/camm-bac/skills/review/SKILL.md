@@ -7,7 +7,7 @@ description: Review code changes for quality, security, and adherence to project
 
 Review code changes for quality, security, and adherence to project standards.
 
-Ask for:
+## Ask for:
 
 1. **What to review** (paste code diff or describe changes)
 2. **Focus areas** (functionality, security, performance, testing, etc.)

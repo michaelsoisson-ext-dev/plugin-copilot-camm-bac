@@ -7,7 +7,7 @@ description: Write code or refactor code to improve readability, performance, an
 
 Write new code or refactor existing code to improve readability, maintainability, performance, or security.
 
-## Ask for
+## Ask for:
 
 1. **What to code** (paste code or describe the file/section)
 2. **What to refactor** (paste code or describe the file/section)

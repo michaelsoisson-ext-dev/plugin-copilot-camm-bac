@@ -1,0 +1,23 @@
+{
+  "skill_name": "write-prd",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Help me write a PRD for a lightweight CRM for independent consultants. I only have a rough idea and I need you to interview me and then turn it into a structured markdown PRD.",
+      "expected_output": "The skill should interview the user in multiple passes and produce a markdown PRD with metadata, executive summary, problem statement, goals, target audience, user stories, prioritization, and out-of-scope.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need a PRD for adding shared project boards to our existing app. Please look through the repo first if it helps you understand what already exists, then ask me the right questions section by section.",
+      "expected_output": "The skill should optionally inspect the repository, ground the PRD in current-state context, and gather missing requirements block by block before drafting the PRD.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Turn this idea into a PRD: an internal tool for support teams to summarize customer issues from Slack and Zendesk. I care a lot about priorities and acceptance criteria, so don't skip the detailed questioning.",
+      "expected_output": "The skill should spend extra attention on user stories, prioritization, and acceptance criteria rather than producing a shallow one-shot document.",
+      "files": []
+    }
+  ]
+}

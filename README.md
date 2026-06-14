@@ -10,11 +10,30 @@ Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learni
 
 0. Utiliser `copilot cli` ( dans VSCode ou pas ) plutot que le chat copilot pour des raison de performances.
 1. dans un terminal copilot :
-   avant de commencer les étapes activer les permissions avec `/yolo`
-   pour eviter les arrets prompts.- ( best practices github !))
+   avant de commencer les étapes activer les permissions avec `/yolo` ou `/allow-all`
+   çà permettra a copilot de travailer en [autopilot](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/autopilot)
+   pour eviter les arrets prompts.- ( best practices github !)
 2. Pour que l'experience du plugin fonctionne bien , il faut au prealable
-   creer un fichier `.github/instructions/copilot-instructions` qui va centraliser le context de l'application .
+   creer un fichier `.github/copilot-instructions` qui va centraliser le context de l'application .
 3. On peut le creer via le fichier `/init`. Copilot va parcourir la code base si existante puis creer le context.
+4. install skill-creator d'antropic
+5. lancer un [`/plan`](https://docs.github.com/en/copilot/how-tos/copilot-cli/cli-best-practices#2-plan-before-you-code)
+
+## Best Practices
+
+1.  Explore -> Plan(autopilot) -> Ask confirmation -> implement->review
+2.  Write code -> screen result-> Iterer sur le feedback
+3.  Partage sa session dans un gist perso github : `/share gist session`
+4.  travailler en parrallele :
+
+```/fleet actions a faire sur le projet el parallele:
+    1. lance le skill camm-bac:review sur la code base
+    2. lance le skill camm-bac:test pour test pass sur la code base
+	  3. lance le skill camm-bac:docker pour conteneur le projet
+```
+
+5. Copilot CLI sessions history, Use `/session` or `/context` et `/review` apres une large iteraion et `/diff` pour inspecter les chnagesç
+6. lancer le skill d'iteration autonome permettant le raffinage du code avant revue `/loop`
 
 # Installation
 
@@ -60,10 +79,12 @@ Ouvrez un fichier et demandez :
 
 Demandez un agent spécialisé
 
-```
+````
+
 @backend-dev-camm-bac Build a new authentication endpoint
 @reviewer-camm-bac Review this pull request code
 @debugger-dev-camm-bac Debug this timeout error
+
 ```
 
 # Qu'est-ce qu'un plugin ?
@@ -81,6 +102,8 @@ Persona ou [assistants IA spécialisés](https://awesome-copilot.github.com/lear
 ## Skills
 
 [Tâche dédiée](https://awesome-copilot.github.com/learning-hub/creating-effective-skills/) ou Fonctionnalités discrètes (sous-répertoires skills dans skills/, contenant un fichier SKILL.md)
+
+la bonne de pratique est d'utiliser le [skill creator](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md) d'antropic pour creer les skills
 
 ## Hooks
 
@@ -118,19 +141,14 @@ Vous pouvez installer des plugins depuis :
 
 - [awsome copilot](https://awesome-copilot.github.com/)
 - [awsome copilot plugins](https://awesome-copilot.github.com/plugins/)
-- [Hub apprentissage](https://awesome-copilot.github.com/learning-hub/)
+- claude-code-plugins
+  Une place de marché est un espace où les développeurs peuvent publier, découvrir, installer et gérer des plugins. C'est un peu comme une boutique d'applications, mais pour les plugins.
 
-Une place de marché est un espace où les développeurs peuvent publier, découvrir, installer et gérer des plugins. C'est un peu comme une boutique d'applications, mais pour les plugins.
+### Apprentissage:
 
-## Exemples de places de marché :
-
-copilot-plugins (ajouté par défaut)
-awesome-copilot (ajouté par défaut)
-claude-code-plugins
-claudeforge-marketplace
-Pour en savoir plus sur l'ajout de places de marché et l'installation de plugins depuis celles-ci, consultez la section « Recherche et installation de plugins pour l'interface de ligne de commande GitHub Copilot ».
-
-Les administrateurs d'entreprise peuvent définir des normes de plugins applicables aux utilisateurs du plan Copilot de l'entreprise, notamment en spécifiant des places de marché et des plugins supplémentaires installés automatiquement pour les utilisateurs de l'interface de ligne de commande Copilot (CLI). Voir À propos des normes de plugins gérées par l'entreprise.
+- [Hub awesome copilot](https://awesome-copilot.github.com/learning-hub/)
+- [Workshop copilot](https://copilot-dev-days.github.io/)
+- [Workshop copilot video](https://www.youtube.com/playlist?list=PL0lo9MOBetEGEAvoSZiPwZ7FqVEQcJWrM)
 
 ### Comparaison des plugins et de la configuration manuelle
 
@@ -139,10 +157,5 @@ Toute fonctionnalité pouvant être ajoutée via un plugin peut également l'êt
 Fonctionnalité : Configuration manuelle dans un dépôt / Plugin
 
 ---
-
-### Prochaines étapes
-
-1.  Setup Copilot dans VS Code : Installer l'extension GitHub Copilot
-2.  Explorer les instructions : Lire .github/copilot-instructions.md
-3.  Personnaliser : Adapter les instructions vos conventions
-4.  Ajouter au team : Partager avec vos collegues
+```
+````

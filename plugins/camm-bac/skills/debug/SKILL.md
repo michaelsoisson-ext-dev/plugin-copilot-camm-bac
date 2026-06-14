@@ -7,7 +7,7 @@ description: Debug production and development issues in the API
 
 Help debug issues in the API, job queue, or database layer.
 
-## Ask for
+## Ask for:
 
 1. **Issue description** (what's happening, what's expected?)
 2. **Error messages** (logs, stack traces, error output)

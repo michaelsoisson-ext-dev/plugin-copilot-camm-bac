@@ -8,6 +8,14 @@ tools:
   - web/fetch
   - read/problems
   - vscode/vscodeAPI
+
+handoffs:
+  - label: Start Implementation
+    agent: agent
+    prompt: Implement the plan
+  - label: Open  in Editor
+    agent: agent
+    prompt: Save the plan in markdown file
 ---
 
 # Plan Mode - Strategic Planning & Architecture Assistant

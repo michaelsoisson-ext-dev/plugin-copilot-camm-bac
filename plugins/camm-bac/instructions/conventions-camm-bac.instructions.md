@@ -23,24 +23,6 @@ Apply the repository-wide guidance from `./github/copilot-instructions.md` to al
 
 - Functions: `camelCase` with action verbs
 
-  ```javascript
-  async function migrateAccount(accountId) {}
-  async function validateEmailAddress(email) {}
-  ```
-
-- Classes: `PascalCase`
-
-  ```javascript
-  class MigrationWorker {}
-  class EmailRepository {}
-  ```
-
-- Files: `kebab-case`
-  ```
-  migration-worker.mjs
-  email-repository.mjs
-  ```
-
 ## Module Organization
 
 - Use ES6 modules with explicit imports and exports like `import chunk from 'lodash/chunk.js'`
@@ -88,13 +70,6 @@ Apply the repository-wide guidance from `./github/copilot-instructions.md` to al
 - Refactor regularly
 - Use version control effectively
 - Document architectural decisions
-
-## Code Standards
-
-- Follow SOLID principles
-- Prefer composition to inheritance
-- Use pure functions without side effects whenever possible
-- Validate inputs at boundaries (APIs)
 
 ## Database
 

@@ -1,7 +1,7 @@
 ---
 name: "debugger-camm-bac"
 description: Debug production and development issues in the API, database, and job queue
-tools: ["search", "findTestFiles"]
+tools: ["search"]
 ---
 
 # Debugger Agent

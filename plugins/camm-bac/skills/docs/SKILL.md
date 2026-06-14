@@ -3,7 +3,7 @@ name: docs
 description: Generate and update project documentation
 ---
 
-## When to Use This Skill
+## When to use this Skill
 
 Generate and update project documentation including API docs, setup guides, and inline code documentation.
 
