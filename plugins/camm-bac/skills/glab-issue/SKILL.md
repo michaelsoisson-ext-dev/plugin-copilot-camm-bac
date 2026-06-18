@@ -1,112 +1,128 @@
 ---
-name: glab
-description: Generate a merge request review (mr) in Gitlab
+name: glab-issue
+description: Create GitLab issues from documentation and generate draft merge requests. Use this skill when you need to create issues from plans or specifications, initialize draft MRs from issue IDs, or automate GitLab issue/MR workflows. Include this skill for feature planning, issue tracking, and initial development branch setup.
 ---
 
-# GitLab MR Review
+# GitLab Issue and Draft MR Creation
 
-## Prerequisite
+## Prerequisites
 
-1. Install `glab`, then run `glab auth login` with a PAT that has the scopes api/read_api/write_repository.
-2. Set the internal instance using `glab config set host https://gitlab.tech.orange` (or export `GL_HOST=https://gitlab.tech.orange`).
-3. From a cloned repository, verify access with `glab repo view -w` to ensure that `glab` detects the correct remote.
+1. Install `glab`: Download from https://gitlab.com/gitlab-org/cli or use package manager
+2. Authenticate: Run `glab auth login` with a PAT that has scopes: `api`, `read_api`, `write_repository`
+3. Set GitLab instance: `glab config set host https://gitlab.tech.orange` (or export `GL_HOST=https://gitlab.tech.orange`)
+4. From a cloned repository, verify access: `glab repo view -w` to ensure `glab` detects the correct remote
 
-## When to use this Skill
+## When to Use This Skill
 
-- Any request containing “review”, “code review”, “review !123”, “review MR-123”, or a request to check a diff before merging.
-- When a user requests to inspect changes related to a given issue or to check the quality/security status of a branch.
+- Creating a GitLab issue from project plans, requirements, or specifications
+- Generating draft merge requests (MRs) linked to issue IDs
+- Automating issue creation workflows with structured content
+- Starting feature development with auto-generated branches
 
-## Glab Workflow
+## Workflow: Phase 1 → Create Issue from Plan
 
-1. **Identify the MR**
+### Input
+- Plan document (markdown, text, or specifications)
+- Issue title and description content
 
-- Provided IID: `glab mr view <iid> --comments --output json -R namespace/projet`.
-- No IID: `glab mr list --state opened --reviewer @me --output json` to suggest pending MRs, then ask which one to process.
-- From an issue: `glab mr issues <iid_issue>` to retrieve the associated MR before proceeding.
+### Steps
 
-3. **Analyze Changes**
+1. **Prepare Issue Content**
+   - Extract title from plan (or use provided title)
+   - Use plan content as issue description
+   - Preserve formatting and structure
 
-- Use `glab mr diff <iid> --color=never` (and `--raw` if you want to chain to `delta`, `less`, `grep`, etc.).
-- If you need to test locally: `glab mr checkout <iid>` creates the working branch ready to run tests/interns.
+2. **Create Issue**
+   ```bash
+   glab issue create \
+     --title "Feature: {title}" \
+     --description "$(cat plan.md)" \
+     -R namespace/projet
+   ```
+   - Output: Issue created with IID (e.g., #42)
+   - Note the IID for next phase
 
-4. **Existing Discussions**
+3. **Verify Creation**
+   - Check issue URL: `https://gitlab.com/org/repo/-/issues/{IID}`
+   - Confirm issue is visible and properly formatted
 
-- `glab mr view <iid> --comments` to view all threads and avoid duplicates before adding a comment.
+## Workflow: Phase 2 → Create Draft MR from Issue
 
-5. **CI/CD Status**
+### Input
+- Issue IID from Phase 1 (or provided directly)
 
-- `glab ci status --branch <source_branch>` for a quick overview.
-- `glab pipeline ci view -b <source_branch>` to analyze jobs, restart (`Ctrl+R`) or cancel (`Ctrl+D`) directly from the terminal.
+### Steps
 
-6. **Summary & Report**
+1. **Create Draft Merge Request**
+   ```bash
+   glab mr create \
+     --issue {IID} \
+     --draft \
+     --push
+   ```
+   - Links MR to issue automatically
+   - Marks as draft (ready for work, not for review)
+   - Creates branch with naming convention: `{IID}-{slug}`
 
-- Use the “Executive summary / Strengths / Issues (Critical, Important, Suggestions) / Security / Performance / Tests / Docs / Verdict” template from the initial skill.
-- Quantify modified rows using `glab mr view --output json | jq` (extractions, additions/deletions) to populate the “Statistics” section.
+2. **Checkout Branch (Optional)**
+   ```bash
+   glab mr checkout {MR_IID}
+   ```
+   - Switches to newly created branch
+   - Ready for development
 
-7. **Feedback Publication (Optional)**
+3. **Verify Creation**
+   - Check MR URL output
+   - Confirm draft status and linked issue
 
-- Always request confirmation before any remote action.
-- General comment: `glab mr note <iid> -m "Question about…?"`.
-- To mark a personal follow-up, `glab mr todo <iid>` adds the MR to your list.
+## Commands Reference
 
-## Best practices
+See `references/guidances.md` for detailed `glab` command documentation including:
+- **Quick reference**: Common commands for issues, MRs, and CI/CD
+- **Comments & discussions**: How to add comments, threaded replies, and diff comments
+- **API calls**: Using `glab api` for advanced operations
+- **Common mistakes**: Patterns to avoid and best practices
 
-- Limit the review to the changes in the diff.
-- Ask questions rather than give instructions.
-- Review the pipeline before concluding.
-- Mention positive points to balance the review.
-- Rank findings by severity (Critical > Important > Suggestions).
-- Verify the impacts on security, performance, testing, and documentation.
-- Confirm with the user before submitting comments in the MR.
+Quick reference for this workflow:
 
-## Report template
+| Task | Command |
+|------|---------|
+| Create issue | `glab issue create --title "..." --description "..."` |
+| List issues | `glab issue list --all` |
+| View issue | `glab issue view {IID}` |
+| Create MR | `glab mr create --issue {IID} --draft --push` |
+| List MRs | `glab mr list --all` |
+| View MR | `glab mr view {IID}` |
+| Checkout branch | `glab mr checkout {IID}` |
 
+**For detailed command flags and options**, refer to `references/guidances.md`.
+
+## Best Practices
+
+- Always confirm issue/MR creation with the user before executing remote operations
+- Use descriptive titles that reflect feature/issue scope
+- Preserve plan content structure in issue description
+- Verify GitLab connectivity before running commands
+- Handle authentication failures gracefully
+- Report issue/MR URLs and IIDs clearly for user reference
+
+**For advanced usage** (comments, threaded replies, API calls, troubleshooting), consult `references/guidances.md`.
+
+## Output Format
+
+**After Issue Creation:**
 ```
-# Code Review: !{MR_IID} - {MR_TITLE}
+✅ Issue Created Successfully
+- Title: Feature: {title}
+- IID: #{issue_id}
+- URL: https://gitlab.com/org/repo/-/issues/{issue_id}
+```
 
-## Executive Summary
-{aperçu}
-
-## Merge Request Details
-- **Project**: {path}
-- **Author**: @{author}
-- **Source**: {source_branch} → **Target**: {target_branch}
-- **Pipeline Status**: {status}
-- **Approvals**: {current}/{required}
-
-## Statistics
-| Metric | Count |
-|--------|-------|
-| Files Changed | {count} |
-| Lines Added | +{additions} |
-| Lines Removed | -{deletions} |
-| Commits | {commit_count} |
-
-## Strengths
-- …
-
-## Issues Found
-### 🔴 Critical
-{…}
-
-### 🟠 Important
-{…}
-
-### 🟢 Suggestions
-{…}
-
-## Security Review
-{…}
-
-## Performance Review
-{…}
-
-## Testing Recommendations
-- …
-
-## Documentation Needs
-- …
-
-## Verdict
-{APPROVED | CHANGES_REQUESTED | NEEDS_DISCUSSION}
+**After MR Creation:**
+```
+✅ Draft MR Created Successfully
+- Title: {issue_title}
+- MR IID: !{mr_id}
+- Branch: {branch_name}
+- URL: https://gitlab.com/org/repo/-/merge_requests/{mr_id}
 ```
