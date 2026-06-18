@@ -79,8 +79,7 @@ Ouvrez un fichier et demandez :
 
 Demandez un agent spécialisé
 
-````
-
+```
 @backend-dev-camm-bac Build a new authentication endpoint
 @reviewer-camm-bac Review this pull request code
 @debugger-dev-camm-bac Debug this timeout error
@@ -153,9 +152,3 @@ Vous pouvez installer des plugins depuis :
 ### Comparaison des plugins et de la configuration manuelle
 
 Toute fonctionnalité pouvant être ajoutée via un plugin peut également l'être en configurant manuellement la CLI Copilot, par exemple en ajoutant des profils d'agent personnalisés ou des serveurs MCP. Cependant, les plugins offrent plusieurs avantages par rapport à la configuration manuelle :
-
-Fonctionnalité : Configuration manuelle dans un dépôt / Plugin
-
----
-```
-````

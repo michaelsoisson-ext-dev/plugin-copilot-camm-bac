@@ -1,7 +1,7 @@
 {
   "name": "camm-bac",
   "description": "Camm Bac development utilities",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Michael soisson",
     "email": "michael.soisson.ext@orange.com"
@@ -11,7 +11,7 @@
   "agents": "agents/",
   "skills": [
     "./skills/backend-dev",
-    "./skills/gitlab-issue",
+    "./skills/glab-issue",
     "./skills/docker",
     "./skills/debug",
     "./skills/test",
