@@ -38,7 +38,7 @@ Help debug issues in the API, job queue, or database layer.
 ## Requirements
 
 - Always read `.github/copilot-instructions.md` in the current working directory first to understand the project's architecture, conventions, and commands
-- Follow project's documentation standards from `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript-camm-bac.instructions` and `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions//conventions-camm-bac.instructions`
+- Follow project's documentation standards from `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/javascript-camm-bac.instructions` and `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/conventions-camm-bac.instructions`
 - Provide minimal reproducible example
 - Include comprehensive logs
 - Suggest both immediate fix and long-term solution
