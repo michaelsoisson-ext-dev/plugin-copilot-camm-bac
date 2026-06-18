@@ -34,9 +34,23 @@ Generate and update project documentation—including API docs, setup guides, te
 - Use realistic examples from the actual codebase
 - Ensure documentation is accessible and clear to target audience
 
-## For Testing Documentation
+## Reference Files for Detailed Guidance
 
-When documenting testing strategies, testing guides, or test-related documentation, reference the Testing Documentation Standards in `references/testing-documentation.md`. This reference covers:
+This skill uses progressive disclosure—quick guidelines in SKILL.md, comprehensive details in references:
+
+### `references/documentation-standards.md` (16 KB)
+Use for general documentation tasks covering:
+- **Code Documentation**: JSDoc format, comments vs. documentation, what to document
+- **README.md**: Structure template, quick start, technology stack, project structure
+- **API Documentation**: Endpoint templates, OpenAPI specs, request/response examples
+- **Job Queue Documentation**: BullMQ job schemas, retry policies, monitoring
+- **Database Documentation**: Schema tables, ER diagrams, relationships
+- **Configuration Documentation**: Environment variables, multi-environment setup
+- **Markdown Formatting**: Headings, code blocks, tables, lists, links
+- **Documentation Maintenance**: Review checklists, versioning, what goes where
+
+### `references/testing-documentation.md` (12 KB)
+Use for testing documentation tasks covering:
 - Testing strategy templates (unit, integration, job queue)
 - Test structure and organization patterns
 - Test naming conventions and best practices
@@ -44,4 +58,10 @@ When documenting testing strategies, testing guides, or test-related documentati
 - API testing and request/response documentation
 - Coverage goals and quality metrics
 
-See that file for detailed templates, examples, and when to reference specific sections.
+## How to Use This Skill
+
+1. **Identify what to document** — Code, API, setup guide, test guide, database schema, config, etc.
+2. **Choose appropriate reference** — General docs → `documentation-standards.md`, testing docs → `testing-documentation.md`
+3. **Follow the templates and examples** — Both references include copy-paste ready templates
+4. **Keep it synchronized** — Update documentation when code changes
+5. **Use realistic examples** — Pull examples from actual codebase when possible
