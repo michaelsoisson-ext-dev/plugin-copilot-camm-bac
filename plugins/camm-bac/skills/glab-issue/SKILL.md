@@ -12,6 +12,10 @@ description: Create GitLab issues from documentation and generate draft merge re
 3. Set GitLab instance: `glab config set host https://gitlab.tech.orange` (or export `GL_HOST=https://gitlab.tech.orange`)
 4. From a cloned repository, verify access: `glab repo view -w` to ensure `glab` detects the correct remote
 
+## GitLab Issue Note
+
+Since `glab` isn't available in this environment, you must replace by `snap run glab`
+
 ## When to Use This Skill
 
 - Creating a GitLab issue from project plans, requirements, or specifications
@@ -22,6 +26,7 @@ description: Create GitLab issues from documentation and generate draft merge re
 ## Workflow: Phase 1 → Create Issue from Plan
 
 ### Input
+
 - Plan document (markdown, text, or specifications)
 - Issue title and description content
 
@@ -33,12 +38,14 @@ description: Create GitLab issues from documentation and generate draft merge re
    - Preserve formatting and structure
 
 2. **Create Issue**
+
    ```bash
    glab issue create \
      --title "Feature: {title}" \
      --description "$(cat plan.md)" \
      -R namespace/projet
    ```
+
    - Output: Issue created with IID (e.g., #42)
    - Note the IID for next phase
 
@@ -49,25 +56,30 @@ description: Create GitLab issues from documentation and generate draft merge re
 ## Workflow: Phase 2 → Create Draft MR from Issue
 
 ### Input
+
 - Issue IID from Phase 1 (or provided directly)
 
 ### Steps
 
 1. **Create Draft Merge Request**
+
    ```bash
    glab mr create \
      --issue {IID} \
      --draft \
      --push
    ```
+
    - Links MR to issue automatically
    - Marks as draft (ready for work, not for review)
    - Creates branch with naming convention: `{IID}-{slug}`
 
 2. **Checkout Branch (Optional)**
+
    ```bash
    glab mr checkout {MR_IID}
    ```
+
    - Switches to newly created branch
    - Ready for development
 
@@ -77,7 +89,8 @@ description: Create GitLab issues from documentation and generate draft merge re
 
 ## Commands Reference
 
-See `references/guidances.md` for detailed `glab` command documentation including:
+See `references/guidelines.md` for detailed `glab` command documentation including:
+
 - **Quick reference**: Common commands for issues, MRs, and CI/CD
 - **Comments & discussions**: How to add comments, threaded replies, and diff comments
 - **API calls**: Using `glab api` for advanced operations
@@ -85,17 +98,17 @@ See `references/guidances.md` for detailed `glab` command documentation includin
 
 Quick reference for this workflow:
 
-| Task | Command |
-|------|---------|
-| Create issue | `glab issue create --title "..." --description "..."` |
-| List issues | `glab issue list --all` |
-| View issue | `glab issue view {IID}` |
-| Create MR | `glab mr create --issue {IID} --draft --push` |
-| List MRs | `glab mr list --all` |
-| View MR | `glab mr view {IID}` |
-| Checkout branch | `glab mr checkout {IID}` |
+| Task            | Command                                               |
+| --------------- | ----------------------------------------------------- |
+| Create issue    | `glab issue create --title "..." --description "..."` |
+| List issues     | `glab issue list --all`                               |
+| View issue      | `glab issue view {IID}`                               |
+| Create MR       | `glab mr create --issue {IID} --draft --push`         |
+| List MRs        | `glab mr list --all`                                  |
+| View MR         | `glab mr view {IID}`                                  |
+| Checkout branch | `glab mr checkout {IID}`                              |
 
-**For detailed command flags and options**, refer to `references/guidances.md`.
+**For detailed command flags and options**, refer to `references/guidelines.md`.
 
 ## Best Practices
 
@@ -106,11 +119,12 @@ Quick reference for this workflow:
 - Handle authentication failures gracefully
 - Report issue/MR URLs and IIDs clearly for user reference
 
-**For advanced usage** (comments, threaded replies, API calls, troubleshooting), consult `references/guidances.md`.
+**For advanced usage** (comments, threaded replies, API calls, troubleshooting), consult `references/guidelines.md`.
 
 ## Output Format
 
 **After Issue Creation:**
+
 ```
 ✅ Issue Created Successfully
 - Title: Feature: {title}
@@ -119,6 +133,7 @@ Quick reference for this workflow:
 ```
 
 **After MR Creation:**
+
 ```
 ✅ Draft MR Created Successfully
 - Title: {issue_title}

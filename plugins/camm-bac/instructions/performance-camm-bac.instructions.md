@@ -109,3 +109,29 @@ Apply the repository-wide guidance from `./github/copilot-instructions.md` to al
 - Test job queue under high job volume
 - Implement circuit breakers based on load test results
 - Set up auto-scaling policies based on load tests
+
+### Required Optimizations
+
+- **Batch Processing**: Process in batches of 100-1000 items
+- **Connection Pooling**: Reuse existing DB and HTTP connections
+- **Caching**: Use Redis for frequently accessed data
+- **Parallel Processing**: Use Promise.all for independent operations
+
+```javascript
+// ✅ Goog: batch process
+async function migrateAccounts(accountIds) {
+  const BATCH_SIZE = 100;
+
+  for (let i = 0; i < accountIds.length; i += BATCH_SIZE) {
+    const batch = accountIds.slice(i, i + BATCH_SIZE);
+    await Promise.all(batch.map((id) => migrateAccount(id)));
+  }
+}
+
+// ❌ Bad :
+async function migrateAccounts(accountIds) {
+  for (const id of accountIds) {
+    await migrateAccount(id);
+  }
+}
+```

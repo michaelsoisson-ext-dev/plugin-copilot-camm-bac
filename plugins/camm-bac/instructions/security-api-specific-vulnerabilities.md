@@ -260,3 +260,26 @@ This check does NOT apply to:
 - **High**: Missing input validation on critical APIs
 - **Medium**: Potential API abuse vectors
 - **Low**: API-specific security issues needing review
+
+## Secrets and Configuration
+
+- **Never hardcode secrets**: Use environment variables
+- **Input validation**: Always validate at boundaries
+- **Sanitization**: Clean data before storage/display
+
+```javascript
+// Configuration centralisée
+const config = {
+  bac: {
+    apiUrl: process.env.BAC_API_URL,
+    apiKey: process.env.BAC_API_KEY,
+    timeout: parseInt(process.env.BAC_TIMEOUT || "30000"),
+  },
+  db: {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+  },
+};
+```
