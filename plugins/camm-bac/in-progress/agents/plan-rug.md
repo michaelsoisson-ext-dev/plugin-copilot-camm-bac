@@ -1,5 +1,5 @@
 ---
-name: "planner-rug"
+name: "plan-rug"
 description: "Pure orchestration agent that decomposes requests, delegates all work to subagents, validates outcomes, and repeats until complete."
 #model: Claude Sonnet 4
 tools: ["vscode", "codebase", "agent", "read", "edit", "execute"]
@@ -55,8 +55,6 @@ Use `manage_todo_list` obsessively:
 - Add new tasks if subagents discover additional work needed
 
 This is your memory. Your context window will fill up. The todo list keeps you oriented.
-
-## Termination Criteria
 
 ## Common Failure Modes (AVOID THESE)
 
