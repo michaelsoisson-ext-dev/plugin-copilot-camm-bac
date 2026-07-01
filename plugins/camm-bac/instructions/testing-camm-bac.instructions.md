@@ -1,6 +1,6 @@
 ---
-applyTo: "**/*.test.js,**/*.spec.js,tests/**"
-description: "Testing standards or writing JavaScript/TypeScript tests using Jest, including mocking strategies, test structure, and common patterns."
+applyTo: "__tests__/**,**/*.test.js,**/*.spec.js,tests/**"
+description: "'Use these guidelines when generating or updating tests.Testing standards or writing JavaScript/TypeScript tests using Jest"
 ---
 
 # Testing Standards
@@ -39,7 +39,7 @@ Apply the repository-wide guidance from `./github/copilot-instructions.md` to al
 
 ## Test Structure
 
-- Name test files with `.test.ts` or `.test.js` suffix
+- Name test files with `.spec.js` `.test.ts` or `.test.js` suffix
 - Place test files next to the code they test or in a dedicated `__tests__` directory
 - Use descriptive test names that explain the expected behavior
 - Use nested describe blocks to organize related tests
