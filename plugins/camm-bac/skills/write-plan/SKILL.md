@@ -1,57 +1,89 @@
 ---
 name: write-plan
-description: Turn the current conversation context into a PRD and publish it to the project issue tracker. Use when user wants to create a PRD from the current context.
+description: Create detailed implementation plans for features and backend systems. Use this skill when the user needs to break down complex features into steps, design architecture before coding, estimate effort, identify blockers, or create a roadmap for development. Generates a structured plan.md file that can be used with `/plan` mode to guide implementation. Apply for backend features, API design, database schema planning, job queue workflows, or any multi-step engineering task.
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a PRD. Do NOT interview the user — just synthesize what you already know.
+# Plan Implementation
 
-## Process
+Structure complex features into actionable steps before coding. Generates `plan.md` for guided development.
+This skill takes the current conversation context or specs and codebase understanding and produces a plan implementation.
 
-1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the PRD, and respect any ADRs in the area you're touching.
+# Constraints
 
-2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can.
+- **DO NOT** interview the user — just synthesize what you already know.
 
-Check with the user that these seams match their expectations.
+## When to Use
 
-3. Write the PRD using the template below, then publish it to the project issue tracker.
+- Breaking down feature or fix requirements into implementation steps
+- Designing backend architecture (APIs, services, data models)
+- Planning database schema and migrations
+- Sequencing async job workflows
+- Estimating effort and identifying blockers
+- Creating development roadmaps for teams
+- Pre-implementation discovery (what could break?)
 
-<prd-template>
+## Planning Framework
 
-## 1. Executive Summary
+### 1. Understand Requirements
 
-- **Problem Statement**: 1-2 sentences on the pain point.
-- **Proposed Solution**: 1-2 sentences on the fix.
-- **Success Criteria**: 3-5 measurable KPIs.
+- Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the context, and respect any ADRs in the area you're touching.
 
-## User Stories
+- Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can.
 
-- This list of user stories should be extremely extensive and cover all aspects of the feature.
+### 2. Define Data Model
 
-A LONG, numbered list of user stories. Each user story should be in the format of:
+Design before coding:
 
-1. As an <actor>, I want a <feature>, so that <benefit>
+- **Resources:** What data objects? (users, projects, documents)
+- **Relationships:** One-to-many? Many-to-many? Foreign keys?
+- **Indexes:** Which columns queried frequently? (user_id, created_at, email)
+- **Constraints:** Unique fields? Required fields? Cascading deletes?
+- **Migrations:** How to add this to existing database?
 
-<user-story-example>
-1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
-</user-story-example>
+### 3. Design API Endpoints
 
-This list of user stories should be extremely extensive and cover all aspects of the feature.
+Define contracts:
 
-## Implementation Decisions
+- **Endpoints:** POST /users, GET /users/:id, DELETE /users/:id
+- **Request:** What fields required? Validation rules?
+- **Response:** Success (200, 201, 204) vs errors (400, 401, 404, 500)
+- **Auth:** Which endpoints need tokens? Scopes?
+- **Rate limits:** Protect from abuse?
 
-A list of implementation decisions that were made. This can include:
+### 4. Break Into Layers
 
-- The modules that will be built/modified
-- The interfaces of those modules that will be modified
-- Technical clarifications from the developer
-- Architectural decisions
-- Schema changes
-- API contracts
-- Specific interactions
+Layer-by-layer implementation:
 
-Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
+- **Routes** (Fastify) - Entry points, request handling
+- **Controllers** - Validation, parameter extraction
+- **Services** - Business logic, orchestration
+- **Repositories** - Database operations
+- **Tests** - Unit, integration, edge cases
+- **Documentation** - JSDoc, README updates
 
-Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it within the relevant decision and note briefly that it came from a prototype. Trim to the decision-rich parts — not a working demo, just the important bits.
+### 5. Identify Async Work
+
+Move heavy ops to job queue:
+
+- **Email sending** (BullMQ job)
+- **File processing** (conversion, cleanup)
+- **Reporting** (aggregations, exports)
+- **Third-party calls** (API integrations with retry logic)
+- **Cleanup** (expired records, cache invalidation)
+
+### 6. Risk Assessment
+
+What could go wrong?
+
+- **Race conditions:** Concurrent requests creating duplicates?
+- **Data integrity:** What if a transaction fails mid-way?
+- **Performance:** Will queries be fast with large datasets?
+- **Security:** Input validation? Token handling? Error messages?
+- **Scalability:** Can this scale horizontally?
+
+### 7. Plan Output Structure
+
+- Write the plan `plan-<issue-name>.md` using the template `./references/plan-template.md` then publish it to the project issue tracker.
 
 ## Testing Decisions
 
@@ -60,13 +92,3 @@ A list of testing decisions that were made. Include:
 - A description of what makes a good test (only test external behavior, not implementation details)
 - Which modules will be tested
 - Prior art for the tests (i.e. similar types of tests in the codebase)
-
-## Out of Scope
-
-A description of the things that are out of scope for this PRD.
-
-## Further Notes
-
-Any further notes about the feature.
-
-</prd-template>
