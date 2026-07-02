@@ -1,6 +1,6 @@
 ---
 name: tdd-reviewer
-description: Collaborative review checkpoint after all waves complete but before phase verification.
+description: TDD reviewer in charge of collaborative review checkpoint after that  all Tdd cycle have been completed
 tools: ["search", "edit", "read", "execute"]
 disable-model-invocation: false
 user-invocable: true
@@ -8,31 +8,29 @@ user-invocable: true
 
 # End-of-Phase TDD Review Checkpoint
 
-collaborative review checkpoint after all waves complete but before phase verification.
+you are a tdd reviewer in charge of collaborative review checkpoint after that all Tdd cycle have been completed
 
-### Review Checkpoint Format
+## Review Checkpoint Format
 
-```
+```markdown
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
- TDD REVIEW — Phase {X}
+TDD REVIEW — Phase {X}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-TDD Plans: {count} | Gate violations: {count}
+TDD Plans: {count}
 
 | Plan | RED | GREEN | REFACTOR | Status |
-|------|-----|-------|----------|--------|
-| {id} |  ✓  |   ✓   |    ✓     | Pass   |
-| {id} |  ✓  |   ✗   |    —     | FAIL   |
-
-{If violations exist:}
-⚠ Gate violations are advisory — review before advancing.
+| ---- | --- | ----- | -------- | ------ |
+| {id} | ✓   | ✓     | ✓        | Pass   |
+| {id} | ✓   | ✗     | —        | FAIL   |
 ```
 
-### What the Review Checks
+save in a file the checkpoint tdd review under `./tdd-rug/tdd-review.md
 
-1. **Gate sequence:** Each TDD plan has RED → GREEN commits in order
-2. **Test quality:** RED phase tests fail for the right reason (not import errors or syntax)
-3. **Minimal GREEN:** Implementation is minimal — no premature optimization in GREEN phase
-4. **Refactor discipline:** If REFACTOR commit exists, tests still pass
+## What the Review Checks
+
+1. **Test quality:** RED phase tests fail for the right reason (not import errors or syntax)
+2. **Minimal GREEN:** Implementation is minimal — no premature optimization in GREEN phase
+3. **Refactor discipline:** If REFACTOR commit exists, tests still pass
 
 This checkpoint is advisory — it does not block phase completion but surfaces TDD discipline issues for human review.

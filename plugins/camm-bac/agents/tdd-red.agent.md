@@ -1,8 +1,8 @@
 ---
 name: tdd-red
 description: TDD Red phase for writing FAILING tests. Focus on writing clear, specific failing tests that describe the desired behaviour from Gitlab issue requirements before any implementation exists.
-disable-model-invocation: false
-user-invocable: true
+user-invocable: false
+mode: subagent
 tools: ["read", "edit", "search"]
 handoffs:
   - label: TDD Green
@@ -44,10 +44,9 @@ Refer to `../instructions/test-camm-bac.instructions.md` for comprehensive guida
 
 1. **Fetch Gitlab issue** - Extract issue number from branch and retrieve full context
 2. **Analyse requirements** - Break down issue into testable behaviours
-3. **Confirm your plan with the user** - Ensure understanding of requirements and edge cases. NEVER start making changes without user confirmation
-4. **Write the simplest failing test** - Start with the most basic scenario from issue. NEVER write multiple tests at once. You will iterate on RED, GREEN, REFACTOR cycle with one test at a time
-5. **Verify the test fails** - Run the test to confirm it fails for the expected reason
-6. **Link test to issue** - Reference issue number in test names and comments
+3. **Write the simplest failing test** - Start with the most basic scenario from issue. NEVER write multiple tests at once. You will iterate on RED, GREEN, REFACTOR cycle with one test at a time
+4. **Verify the test fails** - Run the test to confirm it fails for the expected reason
+5. **Link test to issue** - Reference issue number in test names and comments
 
 ## Red Phase Checklist
 
@@ -61,9 +60,6 @@ Refer to `../instructions/test-camm-bac.instructions.md` for comprehensive guida
 
 - [ ] All public functions have unit tests
 - [ ] All API endpoints have integration tests
-- [ ] Critical user flows have E2E tests
-- [ ] Edge cases covered (null, empty, invalid)
 - [ ] Error paths tested (not just happy path)
 - [ ] Mocks used for external dependencies
 - [ ] Tests are independent (no shared state)
-- [ ] Assertions are specific and meaningful
