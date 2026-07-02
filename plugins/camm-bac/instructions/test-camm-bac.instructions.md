@@ -7,6 +7,15 @@ description: "'Use these guidelines when generating or updating tests.Testing st
 
 Apply the repository-wide guidance from `./github/copilot-instructions.md` to all tests.
 
+## Table of Contents
+
+1. [Testing Strategy](#testing-strategy)
+2. [Test Structure](#test-structure)
+3. [Effective Mocking](#effective-mocking)
+4. [Testing Best Practices](#test-best-practices)
+5. [Test Execution](#test-execution)
+6. [Error Testing](#error-testing)
+
 ## Testing Strategy
 
 - Write unit tests for all business logic (services, utilities)
@@ -44,6 +53,8 @@ Apply the repository-wide guidance from `./github/copilot-instructions.md` to al
 - Use descriptive test names that explain the expected behavior
 - Use nested describe blocks to organize related tests
 - Follow the pattern: `describe('Component/Function/Class', () => { it('should do something', () => {}) })`
+
+### File Organization
 
 ```
 __tests__/
@@ -92,13 +103,71 @@ describe("MigrationWorker", () => {
 });
 ```
 
-### Effective Mocking
+## Effective Mocking
 
-- Mock external dependencies (APIs, databases, etc.) to isolate your tests
+Mock at **system boundaries** only:
+
+- External APIs (payment, email, etc.)
+- Databases (sometimes - prefer test DB)
+- Time/randomness
+- File system (sometimes)
+
+Don't mock:
+
+- Your own classes/modules
+- Internal collaborators
+- Anything you control
+
 - Use `jest.mock()` for module-level mocks
 - Use `jest.spyOn()` for specific function mocks
 - Use `mockImplementation()` or `mockReturnValue()` to define mock behavior
 - Reset mocks between tests with `jest.resetAllMocks()` in `afterEach`
+
+### Designing for Mockability
+
+At system boundaries, design interfaces that are easy to mock:
+
+**1. Use dependency injection**
+
+Pass external dependencies in rather than creating them internally:
+
+```typescript
+// Easy to mock
+function processPayment(order, paymentClient) {
+  return paymentClient.charge(order.total);
+}
+
+// Hard to mock
+function processPayment(order) {
+  const client = new StripeClient(process.env.STRIPE_KEY);
+  return client.charge(order.total);
+}
+```
+
+**2. Prefer SDK-style interfaces over generic fetchers**
+
+Create specific functions for each external operation instead of one generic function with conditional logic:
+
+```typescript
+// GOOD: Each function is independently mockable
+const api = {
+  getUser: (id) => fetch(`/users/${id}`),
+  getOrders: (userId) => fetch(`/users/${userId}/orders`),
+  createOrder: (data) => fetch("/orders", { method: "POST", body: data }),
+};
+
+// BAD: Mocking requires conditional logic inside the mock
+const api = {
+  fetch: (endpoint, options) => fetch(endpoint, options),
+};
+```
+
+The SDK approach means:
+
+- Each mock returns one specific shape
+- No conditional logic in test setup
+- Easier to see which endpoints a test exercises
+- Type safety per endpoint
 
 ## Testing Best Practices
 

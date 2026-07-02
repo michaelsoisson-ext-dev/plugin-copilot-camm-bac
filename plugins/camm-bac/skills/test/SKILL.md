@@ -43,18 +43,21 @@ description: Generate comprehensive unit tests for JavaScript code using Jest, c
 ## Test Types
 
 ### Unit Tests
+
 - Test individual functions/classes in isolation
 - Mock external dependencies (database, APIs, file system)
 - Verify success and error paths
 - Run quickly without external resources
 
 ### Integration Tests
+
 - Test API endpoints with HTTP requests
 - Use test database fixtures or in-memory database
 - Verify request/response contracts
 - Test realistic workflows
 
 ### Job Queue Tests
+
 - Test BullMQ job handlers with mock data
 - Verify retry logic and failure handling
 - Test data validation
