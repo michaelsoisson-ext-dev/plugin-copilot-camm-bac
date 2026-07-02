@@ -20,11 +20,11 @@ After implementing changes, run the tests to verify they pass.
 
 Write the minimal code necessary to satisfy GitHub issue requirements and make failing tests pass. Resist the urge to write more than required.
 
-## GitHub Issue Integration
+## Gitlab Issue Integration
 
 ### Issue-Driven Implementation
 
-- **Reference issue context** - Keep GitHub issue requirements in focus during implementation
+- **Reference issue context** - Keep Gitlab issue requirements in focus during implementation
 - **Validate against acceptance criteria** - Ensure implementation meets issue definition of done
 - **Track progress** - Update issue with implementation progress and blockers
 - **Stay in scope** - Implement only what's required by current issue, avoid scope creep
@@ -50,13 +50,6 @@ Write the minimal code necessary to satisfy GitHub issue requirements and make f
 - **Ignore code smells temporarily** - Duplication and poor design will be addressed in refactor phase
 - **Simple solutions first** - Choose the most straightforward implementation path from issue context
 - **Defer complexity** - Don't anticipate requirements beyond current issue scope
-
-### Implementation Strategies (Polyglot)
-
-- **Start with constants** - Return hard-coded values from issue examples initially
-- **Progress to conditionals** - Add if/else logic as more issue scenarios are tested
-- **Extract to methods/functions** - Create simple helpers when duplication emerges
-- **Use basic collections** - Simple arrays, lists, or maps over complex data structures
 
 ## Execution Guidelines
 

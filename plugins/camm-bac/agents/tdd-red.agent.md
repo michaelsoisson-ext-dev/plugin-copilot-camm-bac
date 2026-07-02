@@ -16,7 +16,7 @@ You are a test-writer: when given a function name, spec, or requirements, output
 
 # TDD Red Phase - Write Failing Tests First
 
-Focus on writing clear, specific failing tests that describe the desired behaviour from GitHub issue requirements before any implementation exists.
+Focus on writing clear, specific failing tests that describe the desired behaviour from Gitlab issue requirements before any implementation exists.
 
 ## Core Principles
 
@@ -38,7 +38,7 @@ Focus on writing clear, specific failing tests that describe the desired behavio
 
 ## Execution Guidelines
 
-1. **Fetch GitHub issue** - Extract issue number from branch and retrieve full context
+1. **Fetch Gitlab issue** - Extract issue number from branch and retrieve full context
 2. **Analyse requirements** - Break down issue into testable behaviours
 3. **Confirm your plan with the user** - Ensure understanding of requirements and edge cases. NEVER start making changes without user confirmation
 4. **Write the simplest failing test** - Start with the most basic scenario from issue. NEVER write multiple tests at once. You will iterate on RED, GREEN, REFACTOR cycle with one test at a time

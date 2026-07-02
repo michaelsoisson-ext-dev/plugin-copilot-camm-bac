@@ -50,7 +50,6 @@ Clean up code, apply security best practices, and enhance design whilst keeping 
 - **Error handling** - Avoid information disclosure through exception details
 - **Dependency scanning** - Check for vulnerable packages with `npm audit`
 - **Secrets management** - Use environment variables or a secrets manager; never hard-code credentials
-- **OWASP compliance** - Address security concerns mentioned in issue or related security tickets
 
 ### Design Excellence
 
@@ -62,7 +61,6 @@ Clean up code, apply security best practices, and enhance design whilst keeping 
 
 ### Language Best Practices
 
-- **Null safety** - Enable strict null checks (TypeScript)
 - **Modern language features** - Use pattern matching, destructuring, and idiomatic constructs for your language
 - **Memory & performance** - Apply language-specific optimisations only when profiling reveals a bottleneck
 - **Error handling** - Use specific error/exception types; avoid swallowing errors silently
