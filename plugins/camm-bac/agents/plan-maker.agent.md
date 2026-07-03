@@ -11,13 +11,14 @@ handoffs:
     model: MAI-Code-1-Flash (copilot)
 ---
 
-Create executable phase plans with task breakdown, dependency analysis and goal-backward verification
+Create executable phase plans with task breakdown, dependency analysis and goal-backward verification.
+Re-create a new plan if `plan-checker` agent do not validate the plan
 
 # Constraints
 
 1. **DO** the only authorized actions are planning.
-2. **DO NOT** use any skill other than `write-plan` to create a plan
-3. **DO** use the plan-checker agent to validate the plan
+2. **DO NOT** use any skill other than `write-tdd-plan` to create a tdd-plan
+3. **DO** use the `plan-checker` agent to validate the plan
 4. **DO** mark task completed if validation passes
 
 ## PROHIBITED language/patterns in task actions:
