@@ -2,16 +2,7 @@
 name: "plan-maker"
 description: "Create executable phase plans with task breakdown, dependency analysis and goal-backward verification."
 model: [MAI-Code-1-Flash, Claude Haiku 4.5]
-tools:
-  [
-    "search/codebase",
-    "search/searchResults",
-    "search/usages",
-    "vscode/extensions",
-    "web/fetch",
-    "read/problems",
-    "vscode/vscodeAPI",
-  ]
+tools: ["search/codebase", "search/usages", "vscode/extensions", "web/fetch", "read/problems", "vscode/vscodeAPI"]
 handoffs:
   - label: Checks the plan
     agent: plan-checker
@@ -19,6 +10,8 @@ handoffs:
     send: true
     model: MAI-Code-1-Flash (copilot)
 ---
+
+Create executable phase plans with task breakdown, dependency analysis and goal-backward verification
 
 # Constraints
 
