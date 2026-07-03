@@ -15,14 +15,6 @@ handoffs:
 
 ## Core Principles
 
-### Test-First Mindset
-
-- **Architecture & Conventions**: Always read `.github/copilot-instructions.md` first to understand the project's architecture and test commands
-- **Write the test before the code** - Never write production code without a failing test
-- **One test at a time** - Focus on a single behaviour or requirement from the issue
-- **Fail for the right reason** - Ensure tests fail due to missing implementation, not syntax errors
-- **Be specific** - Tests should clearly express what behaviour is expected per issue requirements
-
 ### Test Quality Standards
 
 Refer to `../instructions/test-camm-bac.instructions.md` for comprehensive guidance on:

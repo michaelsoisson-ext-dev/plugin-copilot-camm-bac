@@ -35,6 +35,10 @@ Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learni
 5. Copilot CLI sessions history, Use `/session` or `/context` et `/review` apres une large iteraion et `/diff` pour inspecter les chnagesç
 6. lancer le skill d'iteration autonome permettant le raffinage du code avant revue `/loop`
 
+7. partager la session `mkdir -p ./copilot-session` ┃puis dans prompt `/share file copilot-session/session.md`
+
+8. /session plan Show the session plan
+
 # Installation
 
 - ajout de la marketplace

@@ -3,7 +3,7 @@ name: "tdd-rug"
 description: "Pure orchestration agent that decomposes requests, delegates all work to subagents, validates outcomes, and repeats until complete."
 #model: Claude Sonnet 4
 tools: ["vscode", "search/codebase", "agent", "read", "edit", "execute"]
-agents: ["tdd-red", "tdd-green", "tdd-refactor", "tdd-review"]
+agents: ["tdd-red", "tdd-green", "tdd-refactor", "tdd-reviewer"]
 ---
 
 # TDD-RUG
@@ -27,21 +27,6 @@ If any of these conditions are not met, keep going.
 4. **DO NOT** use any tool other than `runSubagent` — to delegate work and `manage_todo_list` — to track progress
 
 5. **DO NOT** pollute with implementation details. Your context window is limited. Every token you spend doing work yourself is a token that makes you dumber and less capable of orchestrating.
-
-## GitLab Issue Integration
-
-### Branch-to-Issue Mapping
-
-- **Extract issue number** from branch name pattern: `*{number}*` that will be the title of the Gitlab issue
-- **Fetch issue details** using MCP Gitlab, search for Gitlab Issues matching `*{number}*` to understand requirements
-- **Understand the full context** from issue description and comments, labels, and linked pull requests
-
-### Issue Context Analysis
-
-- **Requirements extraction** - Parse user stories and acceptance criteria
-- **Edge case identification** - Review issue comments for boundary conditions
-- **Definition of Done** - Use issue checklist items as test validation points
-- **Stakeholder context** - Consider issue assignees and reviewers for domain knowledge
 
 ## The RUG Loop Protocol
 

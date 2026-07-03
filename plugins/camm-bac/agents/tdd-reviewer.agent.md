@@ -2,8 +2,6 @@
 name: tdd-reviewer
 description: TDD reviewer in charge of collaborative review checkpoint after that  all Tdd cycle have been completed
 tools: ["search", "edit", "read", "execute"]
-disable-model-invocation: false
-user-invocable: true
 ---
 
 # End-of-Phase TDD Review Checkpoint
