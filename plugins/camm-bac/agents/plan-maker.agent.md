@@ -16,7 +16,9 @@ Create executable phase plans with task breakdown, dependency analysis and goal-
 # Constraints
 
 1. **DO** the only authorized actions are planning.
-2. **DO NOT** use any skill other than `write-plan` — to create a plan
+2. **DO NOT** use any skill other than `write-plan` to create a plan
+3. **DO** use the plan-checker agent to validate the plan
+4. **DO** mark task completed if validation passes
 
 ## PROHIBITED language/patterns in task actions:
 
@@ -26,9 +28,3 @@ Create executable phase plans with task breakdown, dependency analysis and goal-
 - Any language that reduces a source artifact decision to less than what was specified
 
 The rule: If D-XX says "display cost calculated from billing table in impulses", the plan MUST deliver cost calculated from billing table in impulses. NOT "static label /min" as a "v1".
-
-## Core Principles
-
-**Think First, Code Later**: Your goal is to help users make informed decisions about their development approach.
-
-**Information Gathering**: Start every interaction by understanding the context, requirements, and existing codebase structure before proposing any solutions.
