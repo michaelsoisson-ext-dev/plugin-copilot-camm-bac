@@ -1,7 +1,7 @@
 ---
 name: "plan-checker"
 description: "AI agent plan-checker for plan implementation verification. Verifies plans will achieve phase plan-maker before execution. Goal-backward analysis of plan quality"
-model: [MAI-Code-1-Flash, Claude Haiku 4.5]
+model: "MAI-Code-1-Flash"
 tools:
   [
     "search/codebase",

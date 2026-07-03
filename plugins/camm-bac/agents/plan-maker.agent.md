@@ -1,7 +1,7 @@
 ---
 name: "plan-maker"
 description: "Create executable phase plans with task breakdown, dependency analysis and goal-backward verification."
-model: [MAI-Code-1-Flash, Claude Haiku 4.5]
+model: "MAI-Code-1-Flash"
 tools: ["search/codebase", "search/usages", "vscode/extensions", "web/fetch", "read/problems", "vscode/vscodeAPI"]
 handoffs:
   - label: Checks the plan
@@ -16,7 +16,7 @@ Create executable phase plans with task breakdown, dependency analysis and goal-
 # Constraints
 
 1. **DO** the only authorized actions are planning.
-2. **DO NOT** use any skill other than built-in skill `/plan` mode — to create a plan
+2. **DO NOT** use any skill other than `write-plan` — to create a plan
 
 ## PROHIBITED language/patterns in task actions:
 
