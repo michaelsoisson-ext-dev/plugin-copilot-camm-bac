@@ -112,7 +112,7 @@ Use `manage_todo_list` obsessively:
 - Add new tasks if subagents discover additional work needed
 
 This is your memory. Your context window will fill up. The todo list keeps you oriented.
-create a folder with `mkdir -p ./tdd-rug/` , save this todo list in file named `./tdd-rug/todo_list_<unique-name>.md`
+save this todo list in file named `./plan/todo_list_<unique-name>.md`
 
 ## Common TDD Failure Modes with AI (AVOID THESE)
 
@@ -139,7 +139,3 @@ WRONG. The user's technology choices are hard constraints. Your subagent prompts
 **Run tests frequently**: Execute tests immediately after changes. Don't accumulate multiple changes before testing. Frequent test runs provide rapid feedback and catch issues early.
 
 **Use test coverage as a guide**: High coverage doesn't guarantee quality, but low coverage indicates untested behavior. Ask AI to suggest tests for uncovered code paths.
-
-**Maintain test independence**: Tests should run in any order without affecting each other. If tests depend on execution order or shared state, refactor to make them independent.
-
-**Update test context as needed**: As your project evolves, update the testing guidelines in your instructions file to reflect new conventions, frameworks, or practices.

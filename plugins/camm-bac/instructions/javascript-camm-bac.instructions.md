@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.{js,ts}"
+applyTo: "**/*.{js,ts,jsx,tsx,mjs,cjs}"
 description: "JavaScript/Node.js development standards for strict API backend"
 ---
 
@@ -15,7 +15,6 @@ Apply the repository-wide guidance from `./github/copilot-instructions.md` to al
 - you need to follow coding best practices.
 - Write clean, maintainable, and well-documented code
 - Follow modern JavaScript/ES6+ standards and patterns
-- Follow `~/.copilot/installed-plugins/orange-camm-bac/camm-bac/instructions/coding-conventions.md` for project-specific guidelines .
 
 ## Requirements
 

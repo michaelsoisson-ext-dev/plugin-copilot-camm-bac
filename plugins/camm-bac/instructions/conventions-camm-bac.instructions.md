@@ -6,8 +6,6 @@ applyTo: "**/*.{js,ts,jsx,tsx,mjs,cjs}"
 
 # Conventions Standards
 
-Apply the repository-wide guidance from `./github/copilot-instructions.md` to all documentation.
-
 ## Naming Conventions
 
 - Use descriptive and meaningful names

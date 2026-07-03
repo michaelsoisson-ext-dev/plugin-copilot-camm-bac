@@ -1,11 +1,9 @@
 ---
 applyTo: "**/*.md,pull_requests"
-description: "Code review standards and GitHub review guidelines"
+description: "Code review standards and Gitlab review guidelines"
 ---
 
 # Code Review Standards
-
-Apply the repository-wide guidance from `./github/copilot-instructions.md` to all code reviews.
 
 ## Code Review Process
 

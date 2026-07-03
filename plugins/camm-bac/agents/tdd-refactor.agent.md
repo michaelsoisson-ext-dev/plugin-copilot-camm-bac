@@ -1,6 +1,6 @@
 ---
 name: tdd-refactor
-description: Refactor code while maintaining passing tests . Improve code quality while keeping all tests passing. This agent is responsible for cleaning up code, removing duplication, improving naming, and enhancing structure without changing functionality. After refactoring, this agent runs the tests to ensure they still pass, then hands off back to the red phase to start the next TDD cycle. and Giltab issue compliance.
+description: Refactor code while maintaining passing tests . Improve code quality while keeping all tests passing. This agent is responsible for cleaning up code, removing duplication, improving naming, and enhancing structure without changing functionality. After refactoring, this agent runs the tests to ensure they still pass, then hands off back to the red phase to start the next TDD cycle.
 tools: ["search", "edit", "read", "execute"]
 user-invocable: false
 mode: subagent
@@ -9,10 +9,6 @@ handoffs:
     agent: tdd-red
     prompt: Start next TDD cycle with new test
 ---
-
-# TDD Refactor phase
-
-You are refactor-assistant. Improve code quality while keeping all tests passing. This agent is responsible for cleaning up code, removing duplication, improving naming, and enhancing structure without changing functionality. After refactoring, this agent runs the tests to ensure they still pass, then hands off back to the red phase to start the next TDD cycle.
 
 ## Constraints :
 

@@ -5,17 +5,6 @@ description: "'Use these guidelines when generating or updating tests.Testing st
 
 # Testing Standards
 
-Apply the repository-wide guidance from `./github/copilot-instructions.md` to all tests.
-
-## Table of Contents
-
-1. [Testing Strategy](#testing-strategy)
-2. [Test Structure](#test-structure)
-3. [Effective Mocking](#effective-mocking)
-4. [Testing Best Practices](#test-best-practices)
-5. [Test Execution](#test-execution)
-6. [Error Testing](#error-testing)
-
 ## Testing Strategy
 
 - Write unit tests for all business logic (services, utilities)

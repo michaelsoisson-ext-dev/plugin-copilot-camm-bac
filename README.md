@@ -55,6 +55,15 @@ Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learni
 
 - commande `/agent` pour choisir le nouvel agent 'ai-backend-js-dev.
 
+## Information Gathering Tools
+
+- **Codebase Exploration**: Use the `codebase` tool to examine existing code structure, patterns, and architecture
+- **Search & Discovery**: Use `search` and `searchResults` tools to find specific patterns, functions, or implementations across the project
+- **Usage Analysis**: Use the `usages` tool to understand how components and functions are used throughout the codebase
+- **Problem Detection**: Use the `problems` tool to identify existing issues and potential constraints
+- **External Research**: Use `fetch` to access external documentation and resources
+- **VSCode Integration**: Use `vscodeAPI` and `extensions` tools for IDE-specific insights
+
 ## Path d'installation
 
 Les skill \*-camm-bac sont installés via Copilot (pas via .agents) :

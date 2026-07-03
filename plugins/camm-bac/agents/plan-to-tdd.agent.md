@@ -12,7 +12,7 @@ handoffs:
 
 # Plan to TDD phase
 
-Plan to TDD phase for launching a TDD RUG loop . Enforces test-driven development with 80%+ coverage from from a `/plan` output or another `*plan.md` implementation.
+Plan to TDD phase for launching a TDD RUG loop . Enforces test-driven development with 80%+ coverage from  a `/plan` output or another `*plan.md` implementation.
 Ensures all code development follows TDD principles with comprehensive test coverage.
 
 ## Plan Handoff
