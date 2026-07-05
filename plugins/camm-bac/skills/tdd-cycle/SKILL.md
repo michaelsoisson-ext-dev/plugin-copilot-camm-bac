@@ -18,13 +18,10 @@ description: "Issue to TDD plan phase for launching a TDD cycle . Enforces test-
    - Every red phase test has been passed to green by a separate green phase
    - a final refactor phase has been passed
    - Enforce tests-before-code methodology
-   - You have not done any implementation work yourself
 
 If any of these conditions are not met, keep going.
 
 4. **DO NOT** use any tool that `manage_todo_list` to track progress
-
-5. **DO NOT** pollute with implementation details. Your context window is limited. Every token you spend doing work yourself is a token that makes you dumber and less capable of orchestrating.
 
 ## Test Quality Standards
 
@@ -45,7 +42,7 @@ RUG Loop Protocol = **Repeat Until Good** is a loop comprising the required step
 2. CREATE a todo list tracking every cycle
 3. For each cycle verify the **Checklist per cycle** :
    1. Mark it in-progress
-   2. **red phase** write/update test for new & correct expected behavior.
+   2. **red phase** write/update a failing test for new & correct expected behavior.
    3. run test -- Verify it FAILS
 
    4. **green phase** write minimal code to pass.

@@ -10,7 +10,7 @@ This skill takes the current conversation context or specs and codebase understa
 
 - Refactor business rules from specs to an issue
 - Defining requirements for AI-powered features
-- Create an Issue well formatted
+- Create a comprehensive issue well formatted
 
 # Operational Workflow
 
@@ -23,7 +23,7 @@ This skill takes the current conversation context or specs and codebase understa
 
 4.  Convert each approved planned behavior into a testable guarantee. If the plan already contains user journeys, reuse them rather than inventing new ones.
 
-5.  Generate the document using the **Strict Issue Schema** below.
+5.  Generate the document using the **Strict Issue Schema** below and save it `./plans/issue-<unique-name>`
 
 ## Strict Issue Schema
 
@@ -46,7 +46,8 @@ You **MUST** follow this exact structure for the output:
 ### 3. Technical Specifications
 
 - **Architecture Overview**: Data flow and component interaction.
-- **Integration Points**: APIs, DBs, and Auth.
+- **High level Implementations** : modules that will be built/modified , The interfaces only of those modules that will be modified ,
+- **Integration Points**: API contracts, Schema changes and Auth.
 - **Security & Privacy**: Data handling and compliance.
 
 ### 4. Risks & Roadmap

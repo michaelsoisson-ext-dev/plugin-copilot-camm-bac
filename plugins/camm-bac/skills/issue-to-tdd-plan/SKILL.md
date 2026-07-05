@@ -7,7 +7,7 @@ description: "Issue to TDD plan phase for launching a TDD cycle . Enforces test-
 
 - Starting a new feature or fix development cycle
 - Defining requirements for AI-powered features
-- Create a TDD plan
+- create a TDD plan that breaks down the issue into testable, incremental steps.
 
 # Operational Workflow
 
@@ -20,11 +20,10 @@ description: "Issue to TDD plan phase for launching a TDD cycle . Enforces test-
 
 4. Keep a mapping from plan task -> test target -> RED evidence -> GREEN evidence.
 
-5. Output the result as markdwon checklist `tdd-plan.md` using `[]` for each step
+5. Output the result as markdwon checklist `tdd-plan.md` using `[]` for each step and and save it `./plans/tdd-plan-<unique-name>` at then end.
 
 ### Test-First Guidelines
 
-- **Architecture & Conventions**: Always read `.github/copilot-instructions.md` first to understand the project's architecture and test commands
 - **Write the test before the code** - Never write production code without a failing test
 - **One test at a time** - Focus on a single behaviour or requirement from the issue
 - **Fail for the right reason** - Ensure tests fail due to missing implementation, not syntax errors
