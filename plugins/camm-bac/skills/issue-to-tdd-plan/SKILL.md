@@ -1,13 +1,7 @@
 ---
 name: issue-to-tdd-plan
-description: "Issue to TDD plan phase for launching a TDD cycle . Enforces test-driven development with 80%+ coverage from an `issue.md` or `*.plan.md` implementation .Use this skill when starting a new feature or fix development in a TDD cycle.This skill takes an issue and produces a TDD plan. Do NOT interview the user — just synthesize what you already know."
+description: 'Issue to TDD plan phase for launching a TDD cycle . Enforces test-driven development with 80%+ coverage from an `issue.md` or `*.plan.md` implementation .Use this skill when starting a new feature or fix development in a TDD cycle.This skill takes an issue and produces a TDD plan. Do NOT interview the user — just synthesize what you already know.'
 ---
-
-# When to use this skill
-
-- Starting a new feature or fix development cycle
-- Defining requirements for AI-powered features
-- create a TDD plan that breaks down the issue into testable, incremental steps.
 
 # Operational Workflow
 

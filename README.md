@@ -24,6 +24,7 @@ Nouveau avec Copilot ? [suivre la doc](https://awesome-copilot.github.com/learni
 1.  Explore -> Plan(autopilot) -> Ask confirmation -> implement->review
 2.  Write code -> screen result-> Iterer sur le feedback
 3.  Partage sa session dans un gist perso github : `/share gist session`
+    /share file session/session-uac-1625.md
 4.  travailler en parrallele :
 
 ```/fleet actions a faire sur le projet el parallele:
