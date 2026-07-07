@@ -14,7 +14,7 @@ description: 'Issue to TDD plan phase for launching a TDD cycle . Enforces test-
 
 4. Keep a mapping from plan task -> test target -> RED evidence -> GREEN evidence.
 
-5. Output the result as markdwon checklist `tdd-plan.md` using `[]` for each step and and save it `./plans/tdd-plan-<unique-name>` at then end.
+5. Output the result as markdwon checklist `tdd-plan.md` using `[]` for each step and and save it `.ai-camm-bac/plans/tdd-plan-<unique-name>` at then end.
 
 ### Test-First Guidelines
 

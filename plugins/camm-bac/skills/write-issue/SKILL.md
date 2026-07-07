@@ -13,4 +13,4 @@ description: Create a comprehensive issue from a Jira ticket or specification by
 
 4.  Convert each approved planned behavior into a testable guarantee. If the plan already contains user journeys, reuse them rather than inventing new ones.
 
-5.  Generate the document using the [**Strict Issue Schema**](references/issue-template.md) below and save it `./plans/issue-<unique-name>`
+5.  Generate the document using the [**Strict Issue Schema**](references/issue-template.md) below and save it `.ai-camm-bac/plans/issue-<unique-name>`

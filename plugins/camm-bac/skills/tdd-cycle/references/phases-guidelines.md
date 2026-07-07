@@ -11,7 +11,7 @@
 
 ## Red Phase Checklist
 
-- [ ] Gitlab issue context retrieved and analysed
+- [ ] context retrieved and analysed
 - [ ] Test clearly describes expected behaviour from issue requirements
 - [ ] Test fails for the right reason (missing implementation)
 - [ ] Test name references issue number and describes behaviour
@@ -64,7 +64,7 @@
 
 ## Refactor Phase Checklist
 
-- [ ] GitLab issue acceptance criteria fully satisfied
+- [ ] issue acceptance criteria fully satisfied
 - [ ] Code duplication eliminated
 - [ ] Names clearly express intent aligned with issue domain
 - [ ] Methods have single responsibility

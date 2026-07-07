@@ -5,10 +5,13 @@ Learn to write clear, maintainable BDD scenarios that effectively capture busine
 Use bdd-scenarios when you need to:
 
 - Define acceptance criteria for user stories
-- Document expected system behavior
 - Create comprehensive test coverage
 - Identify edge cases early in development
 - Communicate requirements clearly
+- Define behavior before implementation
+- Create living documentation from tests
+- Bridge communication between developers and business
+- Ensure features meet business requirements
 
 ## Writing Good Scenarios
 
@@ -36,70 +39,6 @@ Scenario: Apply discount
   Then the JavaScript calculates 10% off
 ```
 
-## Acceptance Criteria Format
-
-```gherkin
-Feature: Order Refunds
-
-  # Rule-based acceptance criteria
-  Rule: Full refunds are available within 30 days
-
-    Scenario: Refund requested within return window
-      Given an order placed 15 days ago
-      When the customer requests a refund
-      Then a full refund should be processed
-
-    Scenario: Refund requested after return window
-      Given an order placed 45 days ago
-      When the customer requests a refund
-      Then the refund should be denied
-      And the customer should see "Return window expired"
-```
-
-## Edge Case Scenarios
-
-```gherkin
-Feature: User Registration
-
-  Scenario: Successful registration
-    Given I am on the registration page
-    When I submit valid registration details
-    Then my account should be created
-
-  # Edge cases
-  Scenario: Registration with existing email
-    Given a user exists with email "existing@example.com"
-    When I try to register with email "existing@example.com"
-    Then I should see "Email already registered"
-
-  Scenario: Registration with invalid email format
-    When I try to register with email "not-an-email"
-    Then I should see "Please enter a valid email"
-
-  Scenario: Registration with empty required fields
-    When I submit the registration form with empty fields
-    Then I should see validation errors for required fields
-```
-
-## Scenario Tags and Organization
-
-```gherkin
-@authentication @critical
-Feature: User Login
-
-  @smoke
-  Scenario: Basic login flow
-    # ...
-
-  @security
-  Scenario: Account lockout after failed attempts
-    # ...
-
-  @wip
-  Scenario: Two-factor authentication
-    # Work in progress
-```
-
 ## Best Practices
 
 - Start with the happy path scenario
@@ -109,6 +48,13 @@ Feature: User Login
 - Write scenarios before implementation
 - Review scenarios with stakeholders
 
+- Write scenarios from the user's perspective
+- Keep scenarios focused on single behaviors
+- Use declarative language, not implementation details
+- Reuse step definitions across scenarios
+- Use Background for common setup steps
+- Keep feature files organized by domain area
+
 ## Common Pitfalls
 
 - Writing scenarios after implementation
@@ -116,3 +62,8 @@ Feature: User Login
 - Using vague or ambiguous language
 - Forgetting negative test cases
 - Not organizing with tags effectively
+- Writing scenarios that are too technical
+- Coupling steps to specific UI implementations
+- Creating overly complex scenario outlines
+- Not maintaining feature files as code changes
+- Mixing multiple behaviors in one scenario
